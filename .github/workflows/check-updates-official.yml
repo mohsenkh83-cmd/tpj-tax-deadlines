@@ -46,7 +46,7 @@ jobs:
           exit 0
           fi
 
-          git comit -m "update TPJ deadline monitor"
+          git commit -m "update TPJ deadline monitor"
           
           git pull --rebase origin main
           git push origin HEAD:main
