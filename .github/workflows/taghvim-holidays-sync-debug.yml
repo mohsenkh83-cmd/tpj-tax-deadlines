@@ -1,0 +1,46 @@
+name: TPJ Taghvim Holidays Sync
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-holidays:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Puppeteer
+        run: npm install puppeteer
+
+      - name: Sync holidays from Taghvim.com
+        run: node taghvim-holidays-sync.js
+
+      - name: Upload Taghvim debug files on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: taghvim-debug
+          path: |
+            taghvim-debug-*.html
+            taghvim-debug-*.png
+          if-no-files-found: warn
+          retention-days: 7
+
+      - name: Save holidays.json
+        if: success()
+        run: |
+          git config user.name "tpj-taghvim-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add holidays.json
+          git diff --cached --quiet || git commit -m "Sync holidays from Taghvim.com"
+          git push
