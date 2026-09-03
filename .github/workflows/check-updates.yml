@@ -1,13 +1,9 @@
 name: TPJ Tax Updates Check
 
 on:
+workflow_dispatch:
 schedule:
 - cron: "30 3 * * *"
-workflow_dispatch:
-
-permissions:
-contents: write
-issues: write
 
 jobs:
 check-updates:
@@ -23,6 +19,7 @@ with:
 python-version: "3.12"
 
 - name: Show check time
+shell: bash
 run: |
 echo "TPJ Tax & Insurance Deadlines Monitor"
 echo "Automatic daily check started."
