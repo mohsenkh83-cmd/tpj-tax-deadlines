@@ -1,22 +1,26 @@
-{
-"name": "TPJ Tax Updates Check",
-"on": {
-"workflow_dispatch": {},
-"schedule": [
-{
-"cron": "30 3 * * *"
-}
-]
-},
-"jobs": {
-steps:
-- name: Checkout repository
-uses: actions/checkout@v4
+name: TPJ Tax Updates Check
 
-- name: Set up Python
-uses: actions/setup-python@v5
-with:
-python-version: "3.12"
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 3 * * *"
 
-- name: Show check time
-run: echo "TPJ monitor is working"
+jobs:
+  check-updates:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Show check time
+        shell: bash
+        run: |
+          echo "TPJ Tax & Insurance Deadlines Monitor"
+          echo "Automatic daily check started."
+          date
