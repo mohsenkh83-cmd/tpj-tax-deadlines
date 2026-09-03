@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>مدیریت مواعید TPJ</title>
+<style>
+:root{
+  --bg:#08090b;--panel:#111319;--panel2:#171a20;--gold:#d8a63c;--gold2:#f0c96d;
+  --text:#f4f4f4;--muted:#aab0b8;--line:#514022;--danger:#d9534f;--ok:#3ab86d
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:radial-gradient(circle at top,#1a1b20,#08090b 45%,#050607);
+  color:var(--text);font-family:Tahoma,Arial,sans-serif;line-height:1.8
+}
+.wrap{max-width:1100px;margin:auto;padding:18px}
+header{
+  text-align:center;border:1px solid var(--line);border-radius:22px;padding:22px;
+  background:linear-gradient(180deg,#15171c,#0b0c10)
+}
+h1{margin:0;color:var(--gold2);font-size:32px}
+.sub{color:var(--muted);margin-top:5px}
+.toolbar{
+  margin-top:18px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px
+}
+button,.file-btn,select,input{
+  font:inherit
+}
+button,.file-btn{
+  border:1px solid var(--gold);border-radius:12px;padding:10px 13px;cursor:pointer;
+  background:#111;color:#f5d782;text-align:center
+}
+button.primary{background:linear-gradient(180deg,#e4b84f,#b9811d);color:#111;font-weight:700}
+button.danger{border-color:#88403e;color:#ffaaaa}
+.file-btn input{display:none}
+.notice{
+  margin:14px 0;padding:12px 15px;border-right:4px solid var(--gold);
+  background:#17130c;border-radius:12px;color:#f0deb1
+}
+.panel{
+  margin-top:16px;background:linear-gradient(180deg,#111318,#0c0e11);
+  border:1px solid var(--line);border-radius:18px;padding:16px
+}
+.filters{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:15px}
+select,input{
+  width:100%;background:#0d0f12;color:#fff;border:1px solid #51555d;
+  border-radius:10px;padding:10px
+}
+.form-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:10px
+}
+.form-grid .full{grid-column:1/-1}
+label{display:block;color:#d6b66d;font-size:13px;margin-bottom:4px}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.list{margin-top:16px;display:flex;flex-direction:column;gap:10px}
+.item{
+  border:1px solid #41454c;border-right:4px solid var(--gold);
+  border-radius:14px;padding:12px;background:#0d0f12
+}
+.item .title{font-weight:700;font-size:17px}
+.meta{display:flex;gap:7px;flex-wrap:wrap;color:#b7bcc5;font-size:12px;margin-top:5px}
+.pill{border:1px solid #555;border-radius:20px;padding:1px 8px}
+.item-actions{display:flex;gap:8px;margin-top:10px}
+.item-actions button{padding:6px 10px;font-size:13px}
+.status{
+  position:fixed;left:14px;bottom:14px;max-width:330px;padding:10px 14px;border-radius:12px;
+  background:#101215;border:1px solid #555;display:none;z-index:10
+}
+.status.ok{border-color:#267a49}.status.err{border-color:#8f3431}
+footer{margin-top:24px;text-align:center;color:#8e949d;font-size:13px}
+@media(max-width:700px){
+  .toolbar{grid-template-columns:1fr 1fr}
+  .form-grid,.filters{grid-template-columns:1fr}
+  .form-grid .full{grid-column:auto}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>مدیریت مواعید TPJ</h1>
+  <div class="sub">ویرایش ساده‌ی مواعید بدون دستکاری کد JSON</div>
+
+  <div class="toolbar">
+    <label class="file-btn">بارگذاری deadlines.json
+      <input type="file" id="fileInput" accept=".json,application/json">
+    </label>
+    <button id="loadSite">خواندن فایل سایت</button>
+    <button id="saveLocal">ذخیره موقت در مرورگر</button>
+    <button id="download" class="primary">دانلود deadlines.json</button>
+  </div>
+</header>
+
+<div class="notice">
+بعد از پایان ویرایش، روی «دانلود deadlines.json» بزن و فایل دانلودشده را در GitHub جایگزین فایل <b>deadlines.json</b> کن.
+</div>
+
+<section class="panel">
+  <div class="filters">
+    <div>
+      <label>سال پیش‌فرض</label>
+      <input id="defaultYear" type="number" min="1300" max="1500">
+    </div>
+    <div>
+      <label>ماه پیش‌فرض</label>
+      <select id="monthSelect"></select>
+    </div>
+  </div>
+</section>
+
+<section class="panel">
+  <h2 style="margin-top:0;color:#f0c96d">افزودن / ویرایش موعد</h2>
+  <input type="hidden" id="editIndex" value="">
+  <div class="form-grid">
+    <div>
+      <label>ماه</label>
+      <select id="formMonth"></select>
+    </div>
+    <div>
+      <label>روز یا عبارت موعد</label>
+      <input id="day" placeholder="مثلاً 15 یا پایان ماه">
+    </div>
+    <div class="full">
+      <label>عنوان موعد</label>
+      <input id="title" placeholder="مثلاً ارسال لیست بیمه">
+    </div>
+    <div>
+      <label>نوع</label>
+      <select id="type">
+        <option>مالیاتی</option>
+        <option>حقوق</option>
+        <option>بیمه</option>
+        <option>سایر</option>
+      </select>
+    </div>
+    <div>
+      <label>رنگ نمایشی</label>
+      <select id="color">
+        <option value="gold">طلایی</option>
+        <option value="green">سبز</option>
+        <option value="blue">آبی</option>
+        <option value="purple">بنفش</option>
+      </select>
+    </div>
+    <div class="full">
+      <label>دوره / توضیح</label>
+      <input id="period" placeholder="مثلاً اردیبهشت سال جاری">
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="primary" id="saveItem">ثبت موعد</button>
+    <button id="clearForm">پاک کردن فرم</button>
+  </div>
+</section>
+
+<section class="panel">
+  <h2 style="margin-top:0;color:#f0c96d">مواعید ماه انتخاب‌شده</h2>
+  <div id="list" class="list"></div>
+</section>
+
+<footer>این صفحه فقط ابزار مدیریت فایل است و مستقیماً اطلاعات GitHub را تغییر نمی‌دهد.</footer>
+</div>
+
+<div id="status" class="status"></div>
+
+<script>
+const months=["فروردین","اردیبهشت","خرداد","تیر","مرداد","شهریور","مهر","آبان","آذر","دی","بهمن","اسفند"];
+let data={defaultYear:1405,defaultMonth:2,months:{}};
+months.forEach(m=>data.months[m]=[]);
+
+function notify(msg,ok=true){
+  const s=document.getElementById("status");
+  s.textContent=msg;s.className="status "+(ok?"ok":"err");s.style.display="block";
+  setTimeout(()=>s.style.display="none",2500);
+}
+function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]))}
+function setup(){
+  const opts=months.map((m,i)=>`<option value="${i}">${m}</option>`).join("");
+  document.getElementById("monthSelect").innerHTML=opts;
+  document.getElementById("formMonth").innerHTML=opts;
+  document.getElementById("monthSelect").onchange=()=>{
+    data.defaultMonth=Number(document.getElementById("monthSelect").value);
+    render();
+  };
+  document.getElementById("defaultYear").onchange=()=>{
+    data.defaultYear=Number(document.getElementById("defaultYear").value)||1405;
+  };
+  document.getElementById("formMonth").onchange=render;
+  syncControls();render();
+}
+function syncControls(){
+  document.getElementById("defaultYear").value=data.defaultYear||1405;
+  document.getElementById("monthSelect").value=Number.isInteger(data.defaultMonth)?data.defaultMonth:2;
+  document.getElementById("formMonth").value=Number.isInteger(data.defaultMonth)?data.defaultMonth:2;
+}
+function normalize(d){
+  if(!d.months)d.months={};
+  months.forEach(m=>{if(!Array.isArray(d.months[m]))d.months[m]=[]});
+  d.defaultYear=Number(d.defaultYear)||1405;
+  d.defaultMonth=Number.isInteger(d.defaultMonth)?d.defaultMonth:2;
+  return d;
+}
+function render(){
+  const mi=Number(document.getElementById("formMonth").value);
+  const month=months[mi];
+  const arr=data.months[month]||[];
+  const list=document.getElementById("list");
+  if(!arr.length){list.innerHTML='<div class="item">برای این ماه موعدی ثبت نشده است.</div>';return;}
+  list.innerHTML=arr.map((e,i)=>`
+    <div class="item">
+      <div class="title">${esc(e.title)}</div>
+      <div class="meta">
+        <span class="pill">${esc(e.day)}</span>
+        <span class="pill">${esc(e.type)}</span>
+        <span>${esc(e.period)}</span>
+      </div>
+      <div class="item-actions">
+        <button onclick="editItem(${i})">ویرایش</button>
+        <button class="danger" onclick="deleteItem(${i})">حذف</button>
+      </div>
+    </div>`).join("");
+}
+function parseDay(v){
+  const t=v.trim();
+  if(/^\d+$/.test(t)) return Number(t);
+  return t;
+}
+function clearForm(){
+  document.getElementById("editIndex").value="";
+  document.getElementById("day").value="";
+  document.getElementById("title").value="";
+  document.getElementById("period").value="";
+  document.getElementById("type").value="مالیاتی";
+  document.getElementById("color").value="gold";
+  document.getElementById("saveItem").textContent="ثبت موعد";
+}
+function saveItem(){
+  const mi=Number(document.getElementById("formMonth").value);
+  const month=months[mi];
+  const title=document.getElementById("title").value.trim();
+  const day=document.getElementById("day").value.trim();
+  if(!title||!day){notify("عنوان و موعد را وارد کن",false);return}
+  const item={
+    day:parseDay(day),
+    type:document.getElementById("type").value,
+    title,
+    period:document.getElementById("period").value.trim(),
+    color:document.getElementById("color").value
+  };
+  const idx=document.getElementById("editIndex").value;
+  if(idx==="") data.months[month].push(item);
+  else data.months[month][Number(idx)]=item;
+  clearForm();render();notify("موعد ذخیره شد");
+}
+window.editItem=function(i){
+  const mi=Number(document.getElementById("formMonth").value);
+  const e=data.months[months[mi]][i];
+  document.getElementById("editIndex").value=i;
+  document.getElementById("day").value=e.day;
+  document.getElementById("title").value=e.title||"";
+  document.getElementById("period").value=e.period||"";
+  document.getElementById("type").value=e.type||"مالیاتی";
+  document.getElementById("color").value=e.color||"gold";
+  document.getElementById("saveItem").textContent="ذخیره تغییرات";
+  window.scrollTo({top:document.querySelectorAll(".panel")[1].offsetTop-10,behavior:"smooth"});
+}
+window.deleteItem=function(i){
+  if(!confirm("این موعد حذف شود؟"))return;
+  const mi=Number(document.getElementById("formMonth").value);
+  data.months[months[mi]].splice(i,1);
+  render();notify("موعد حذف شد");
+}
+document.getElementById("saveItem").onclick=saveItem;
+document.getElementById("clearForm").onclick=clearForm;
+
+document.getElementById("saveLocal").onclick=()=>{
+  data.defaultYear=Number(document.getElementById("defaultYear").value)||1405;
+  data.defaultMonth=Number(document.getElementById("monthSelect").value);
+  localStorage.setItem("tpj_deadlines",JSON.stringify(data));
+  notify("در مرورگر ذخیره شد");
+};
+document.getElementById("download").onclick=()=>{
+  data.defaultYear=Number(document.getElementById("defaultYear").value)||1405;
+  data.defaultMonth=Number(document.getElementById("monthSelect").value);
+  const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json;charset=utf-8"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download="deadlines.json";
+  a.click();
+  URL.revokeObjectURL(a.href);
+  notify("فایل deadlines.json دانلود شد");
+};
+document.getElementById("fileInput").onchange=async(e)=>{
+  const f=e.target.files[0];if(!f)return;
+  try{
+    data=normalize(JSON.parse(await f.text()));
+    syncControls();render();notify("فایل بارگذاری شد");
+  }catch(err){notify("فایل JSON معتبر نیست",false)}
+};
+document.getElementById("loadSite").onclick=async()=>{
+  try{
+    const r=await fetch("deadlines.json?ts="+Date.now(),{cache:"no-store"});
+    if(!r.ok)throw new Error();
+    data=normalize(await r.json());
+    syncControls();render();notify("اطلاعات فعلی سایت خوانده شد");
+  }catch(e){notify("خواندن فایل سایت ممکن نشد",false)}
+};
+
+const saved=localStorage.getItem("tpj_deadlines");
+if(saved){
+  try{data=normalize(JSON.parse(saved))}catch(e){}
+}
+setup();
+</script>
+</body>
+</html>
