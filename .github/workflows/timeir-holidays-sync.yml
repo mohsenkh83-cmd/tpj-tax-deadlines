@@ -1,0 +1,61 @@
+name: TPJ Time.ir Holidays Sync
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 3 * * 1"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tpj-timeir-holidays
+  cancel-in-progress: false
+
+jobs:
+  sync-holidays:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install timeir==0.0.3 jdatetime
+
+      - name: Sync official holidays from Time.ir
+        run: python timeir-holidays-sync.py
+
+      - name: Save holidays.json
+        shell: bash
+        run: |
+          set -e
+
+          git config user.name "tpj-timeir-bot"
+          git config user.email "actions@users.noreply.github.com"
+
+          git add holidays.json
+
+          if git diff --cached --quiet; then
+            echo "No holiday changes."
+            exit 0
+          fi
+
+          git commit -m "Sync holidays from Time.ir"
+
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            sleep 5
+          done
+
+          exit 1
