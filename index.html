@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>تراز پردازان جوان اروند | مواعید مالیاتی و بیمه‌ای</title>
+<style>
+:root{--bg:#08090b;--panel:#101216;--panel2:#151820;--gold:#d8a63c;--gold2:#f0c96d;--muted:#a8adb7;--line:#5e4825;--green:#36c36b;--blue:#4895ff;--purple:#9a6cff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 50% -10%,#1b1c20 0,#090a0c 36%,#050607 80%);color:#f3f3f3;font-family:Tahoma,Arial,sans-serif;line-height:1.85}
+.wrap{max-width:1180px;margin:auto;padding:20px}
+.hero{border:1px solid #725628;border-radius:26px;padding:30px 22px 22px;background:linear-gradient(180deg,rgba(24,25,29,.94),rgba(8,9,11,.98));box-shadow:0 24px 70px rgba(0,0,0,.4);text-align:center}
+.logo{width:min(290px,65vw);height:auto;display:block;margin:0 auto 8px;filter:drop-shadow(0 10px 16px rgba(0,0,0,.5))}
+h1{margin:0;color:var(--gold2);font-size:clamp(30px,5vw,54px);letter-spacing:-1px}
+.subtitle{font-size:clamp(16px,2.5vw,24px);color:#eee;margin-top:4px}
+.rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:18px auto;max-width:560px}
+.info-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}
+.info{border:1px solid #5c4726;border-radius:16px;padding:13px;background:#0e1013}
+.info b{display:block;color:var(--gold2);margin-bottom:2px}
+.info.address{grid-column:span 2}
+.actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:18px}
+.btn{padding:11px 18px;border-radius:14px;text-decoration:none;font-weight:700;border:1px solid var(--gold);transition:.2s}
+.btn.primary{background:linear-gradient(180deg,#e4b84f,#b9811d);color:#111}.btn.secondary{color:#f6d88a;background:#111}
+.notice{margin:20px 0;padding:15px 18px;border-right:4px solid var(--gold);background:#17130c;border-radius:14px;color:#f0deb1}
+.dashboard{display:grid;grid-template-columns:1fr 1.15fr;gap:16px;margin-top:20px}
+.card{background:linear-gradient(180deg,#111318,#0c0e11);border:1px solid #4e3d23;border-radius:20px;padding:18px}
+.card h2{color:var(--gold2);margin:0 0 14px;font-size:24px}
+.month-nav{display:flex;align-items:center;justify-content:space-between;border:1px solid #4a4d54;border-radius:14px;padding:8px 10px;margin-bottom:14px;background:#0b0c0f}
+.month-nav button{background:transparent;color:#fff;border:0;font-size:24px;cursor:pointer}
+.month-title{font-weight:700;font-size:21px}
+.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:1px;border:1px solid #34363b;background:#34363b}
+.cal-head,.day{background:#0d0f12;min-height:46px;display:flex;align-items:center;justify-content:center}
+.cal-head{color:#c8c8c8;font-size:13px;min-height:34px}
+.day{position:relative;font-size:15px}
+.day.has-event{outline:1px solid var(--gold);outline-offset:-3px;color:#fff0b6}
+.dot{position:absolute;bottom:4px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.events{display:flex;flex-direction:column;gap:10px}
+.event{border:1px solid #3d4148;border-right:4px solid var(--gold);border-radius:14px;padding:12px;background:#0d0f12}
+.event.green{border-right-color:var(--green)}.event.blue{border-right-color:var(--blue)}.event.purple{border-right-color:var(--purple)}
+.event .meta{display:flex;gap:8px;flex-wrap:wrap;color:#b8bdc6;font-size:12px;margin-top:4px}
+.pill{border:1px solid #555;border-radius:20px;padding:1px 8px}
+.live-wrap{margin-top:18px;background:#101216;border:1px solid #514022;border-radius:20px;padding:18px}
+.live-head{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
+.live-head h2{margin:0;color:var(--gold2)}.live-check{font-size:13px;color:#cbb171}
+.live-card{padding:13px 0;border-bottom:1px dotted #4b4f56}.live-card:last-child{border:0}
+.live-source{color:var(--gold2);font-weight:700}.live-meta{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:#aaa}.live-meta a{color:#e7be5d}
+footer{margin-top:24px;padding:22px 10px;text-align:center;color:#aeb2ba;border-top:1px solid #3b3020}
+@media(max-width:850px){
+  .wrap{padding:14px}
+  .hero{padding:24px 16px 20px;border-radius:22px}
+  .logo{width:min(230px,58vw)}
+  .info-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .info.address{grid-column:1/-1}
+  .dashboard{grid-template-columns:1fr}
+  .card{padding:15px}
+}
+.wrap{width:100%;padding:8px}
+  .hero{padding:18px 10px 16px;border-radius:18px}
+  .logo{width:min(180px,52vw);margin-bottom:5px}
+  h1{font-size:clamp(25px,8vw,34px);line-height:1.45}
+  .subtitle{font-size:15px}
+  .rule{margin:13px auto}
+  .info-grid{grid-template-columns:1fr;gap:8px;margin-top:12px}
+  .info,.info.address{grid-column:auto;width:100%;min-width:0;padding:11px 12px;border-radius:13px;overflow-wrap:anywhere;word-break:break-word}
+  .info b{margin-bottom:1px}
+  .actions{display:grid;grid-template-columns:1fr;gap:8px;margin-top:13px}
+  .btn{width:100%;padding:12px 10px}
+  .notice{margin:12px 0;padding:12px 13px;font-size:13px}
+  .dashboard{gap:10px;margin-top:12px}
+  .card,.live-wrap{padding:12px;border-radius:16px;min-width:0}
+  .card h2,.live-head h2{font-size:19px}
+  .month-nav{padding:6px 8px;margin-bottom:10px}
+  .month-title{font-size:17px}
+  .calendar{width:100%;min-width:0}
+  .cal-head,.day{min-width:0;min-height:39px;font-size:11px}
+  .event{padding:10px;font-size:13px}
+  .event .meta,.live-meta{font-size:11px}
+  .live-head{align-items:flex-start}
+  .live-check{font-size:11px}
+  footer{margin-top:16px;padding:16px 8px;font-size:12px}
+}
+@media(max-width:360px){
+  .wrap{padding:5px}
+  .hero{padding-left:7px;padding-right:7px}
+  .cal-head,.day{min-height:36px;font-size:10px}
+  .card{padding:9px}
+}
+
+@media(max-width:520px){
+  .wrap{padding:8px}
+  .hero{padding:16px 10px 14px;border-radius:20px}
+  .logo{width:min(225px,58vw);margin-bottom:2px}
+  h1{font-size:clamp(27px,8.5vw,38px);line-height:1.45}
+  .subtitle{font-size:15px;margin-top:0}
+  .rule{margin:12px auto}
+  .info-grid{grid-template-columns:1fr;gap:8px;margin-top:10px}
+  .info.address{grid-column:auto}
+  .info{padding:10px 12px;min-height:auto;border-radius:14px}
+  .actions{margin-top:12px;gap:8px}
+  .btn{width:100%;padding:10px 14px}
+  .notice{margin:14px 0;padding:12px 14px;font-size:14px}
+  .dashboard{gap:12px;margin-top:12px}
+  .card,.live-wrap{padding:14px;border-radius:17px}
+  .card h2,.live-head h2{font-size:22px}
+  .cal-head,.day{min-height:40px;font-size:12px}
+}
+
+
+.picker{
+  background:#0d0f12;color:#f4f4f4;border:1px solid #555b66;
+  border-radius:10px;padding:8px 10px;font-family:inherit;font-size:15px;
+  min-width:115px;text-align:center
+}
+@media(max-width:520px){
+  .month-nav{display:grid;grid-template-columns:42px 1fr 1fr 42px;gap:6px}
+  .picker{min-width:0;width:100%;font-size:14px;padding:8px 5px}
+}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="hero">
+    <img src="tpj-logo.png" alt="TPJ" class="logo">
+    <h1>تراز پردازان جوان اروند</h1>
+    <div class="subtitle">خدمات حسابداری و امور مالیاتی</div>
+    <div class="rule"></div>
+
+    <div class="info-grid">
+      <div class="info"><b>تلفن</b>09999330687</div>
+      <div class="info"><b>ایمیل</b>tarazpardazanjavan@gmail.com</div>
+      <div class="info"><b>شماره ثبت</b>۱۰۲</div>
+      <div class="info address"><b>آدرس</b>آبادان، خیابان گمرک، آپارتمان برلیان، طبقه ۳، واحد ۱۰۱</div>
+    </div>
+    <div class="actions">
+      <a class="btn primary" href="https://wa.me/989999330687">ارتباط در واتساپ</a>
+      <a class="btn secondary" href="#latest">آخرین تغییرات مواعید</a>
+    </div>
+  </section>
+
+  <div class="notice">ماه‌ها و تاریخ‌های تقویم از فایل داده جداگانه خوانده می‌شوند؛ بنابراین ظاهر سایت ثابت می‌ماند و مواعید بدون بازطراحی صفحه قابل تغییر و به‌روزرسانی هستند.</div>
+
+  <section class="dashboard">
+    <div class="card">
+      <h2>تقویم عمومی مواعید</h2>
+      <div class="month-nav">
+        <button id="prevMonth" aria-label="ماه قبل">‹</button>
+        <select id="monthSelect" class="picker" aria-label="انتخاب ماه"></select>
+        <select id="yearSelect" class="picker" aria-label="انتخاب سال"></select>
+        <button id="nextMonth" aria-label="ماه بعد">›</button>
+      </div>
+      <div class="calendar" id="calendar"></div>
+    </div>
+
+    <div class="card">
+      <h2>مواعید ماه انتخاب‌شده</h2>
+      <div id="events" class="events"></div>
+    </div>
+  </section>
+
+  <section class="live-wrap" id="latest">
+    <div class="live-head">
+      <h2>آخرین تغییرات مواعید مالیاتی و بیمه‌ای</h2>
+      <div class="live-check">آخرین بررسی: <span id="lastCheck">...</span></div>
+    </div>
+    <div id="liveUpdates">در حال دریافت آخرین اطلاعیه‌ها...</div>
+  </section>
+
+  <footer>تراز پردازان جوان اروند — خدمات حسابداری و امور مالیاتی</footer>
+</div>
+
+<script>
+const monthNames=["فروردین","اردیبهشت","خرداد","تیر","مرداد","شهریور","مهر","آبان","آذر","دی","بهمن","اسفند"];
+const weekdays=["ش","ی","د","س","چ","پ","ج"];
+let selectedMonth=2;
+let selectedYear=1405;
+let data={months:{}};
+
+function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]))}
+
+function setupPickers(){
+  const ms=document.getElementById("monthSelect");
+  const ys=document.getElementById("yearSelect");
+  ms.innerHTML=monthNames.map((m,i)=>`<option value="${i}">${m}</option>`).join("");
+  const years=[];
+  for(let y=1403;y<=1410;y++) years.push(y);
+  ys.innerHTML=years.map(y=>`<option value="${y}">${y}</option>`).join("");
+  ms.value=selectedMonth;
+  ys.value=selectedYear;
+  ms.onchange=()=>{selectedMonth=Number(ms.value);renderCalendar()};
+  ys.onchange=()=>{selectedYear=Number(ys.value);renderCalendar()};
+}
+
+function daysInMonth(monthIndex,year){
+  if(monthIndex<6) return 31;
+  if(monthIndex<11) return 30;
+  // Simple leap-year handling for display; deadline data remains independent.
+  const leap=[1,5,9,13,17,22,26,30];
+  return leap.includes(year%33)?30:29;
+}
+
+function renderCalendar(){
+  const name=monthNames[selectedMonth];
+  const events=(data.months?.[name]||[]);
+  const eventDays=new Set(events.filter(e=>Number.isInteger(e.day)).map(e=>e.day));
+  const root=document.getElementById("calendar");
+  root.innerHTML="";
+  weekdays.forEach(w=>{
+    const d=document.createElement("div");
+    d.className="cal-head"; d.textContent=w; root.appendChild(d);
+  });
+
+  // Calendar is intentionally compact; dates are selectable and deadlines come from JSON.
+  const days=daysInMonth(selectedMonth,selectedYear);
+  for(let i=1;i<=days;i++){
+    const d=document.createElement("button");
+    d.type="button";
+    d.className="day"+(eventDays.has(i)?" has-event":"");
+    d.textContent=i;
+    d.style.border="0";
+    d.style.color="inherit";
+    d.style.cursor="pointer";
+    d.onclick=()=>showDay(i);
+    if(eventDays.has(i)){
+      const dot=document.createElement("span");
+      dot.className="dot"; d.appendChild(dot);
+    }
+    root.appendChild(d);
+  }
+  renderEvents(events);
+}
+
+function renderEvents(events){
+  const ev=document.getElementById("events");
+  if(!events.length){
+    ev.innerHTML='<div class="event">برای این ماه موردی ثبت نشده است.</div>';
+    return;
+  }
+  ev.innerHTML=events.map(e=>`<div class="event ${esc(e.color)}">
+    <strong>${esc(e.title)}</strong>
+    <div class="meta">
+      <span class="pill">${esc(e.day)}</span>
+      <span class="pill">${esc(e.type)}</span>
+      <span>${esc(e.period)}</span>
+    </div>
+  </div>`).join("");
+}
+
+function showDay(day){
+  const name=monthNames[selectedMonth];
+  const events=(data.months?.[name]||[]).filter(e=>e.day===day);
+  if(events.length) renderEvents(events);
+}
+
+async function loadDeadlines(){
+  try{
+    const r=await fetch("deadlines.json?ts="+Date.now(),{cache:"no-store"});
+    data=await r.json();
+    if(data.defaultYear) selectedYear=Number(data.defaultYear);
+    if(Number.isInteger(data.defaultMonth)) selectedMonth=data.defaultMonth;
+  }catch(e){ data={months:{}} }
+  setupPickers();
+  renderCalendar();
+}
+
+async function loadUpdates(){
+  try{
+    const r=await fetch("latest-updates.json?ts="+Date.now(),{cache:"no-store"});
+    const j=await r.json();
+    document.getElementById("lastCheck").textContent=j.last_check_utc?new Date(j.last_check_utc).toLocaleString("fa-IR"):"نامشخص";
+    const items=(j.items||[]).slice().reverse().slice(0,6);
+    const box=document.getElementById("liveUpdates");
+    if(!items.length){box.innerHTML='<div class="live-card">در آخرین بررسی، اطلاعیه جدید مرتبطی شناسایی نشد.</div>';return}
+    box.innerHTML=items.map(x=>`<article class="live-card">
+      <div class="live-source">${esc(x.source)}</div>
+      <div>${esc(x.text)}</div>
+      <div class="live-meta">
+        ${x.date?`<span>${new Date(x.date).toLocaleString("fa-IR")}</span>`:""}
+        ${x.link?`<a href="${esc(x.link)}" target="_blank" rel="noopener">مشاهده منبع</a>`:""}
+      </div>
+    </article>`).join("");
+  }catch(e){
+    document.getElementById("liveUpdates").innerHTML='<div class="live-card">دریافت اطلاعیه‌ها موقتاً ممکن نیست.</div>';
+  }
+}
+
+document.getElementById("prevMonth").onclick=()=>{
+  selectedMonth--;
+  if(selectedMonth<0){selectedMonth=11;selectedYear--}
+  document.getElementById("monthSelect").value=selectedMonth;
+  document.getElementById("yearSelect").value=selectedYear;
+  renderCalendar();
+};
+document.getElementById("nextMonth").onclick=()=>{
+  selectedMonth++;
+  if(selectedMonth>11){selectedMonth=0;selectedYear++}
+  document.getElementById("monthSelect").value=selectedMonth;
+  document.getElementById("yearSelect").value=selectedYear;
+  renderCalendar();
+};
+
+loadDeadlines();
+loadUpdates();
+</script>
+</body>
+</html>
