@@ -1,0 +1,29 @@
+name: TPJ Tax Updates Check
+
+on:
+schedule:
+- cron: "30 3 * * *"
+workflow_dispatch:
+
+permissions:
+contents: write
+issues: write
+
+jobs:
+check-updates:
+runs-on: ubuntu-latest
+
+steps:
+- name: Checkout repository
+uses: actions/checkout@v4
+
+- name: Set up Python
+uses: actions/setup-python@v5
+with:
+python-version: "3.12"
+
+- name: Show check time
+run: |
+echo "TPJ Tax & Insurance Deadlines Monitor"
+echo "Automatic daily check started."
+date
