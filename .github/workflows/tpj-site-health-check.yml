@@ -1,0 +1,34 @@
+name: TPJ Site Health Check
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "index.html"
+      - "deadlines.json"
+      - "holidays.json"
+      - "latest-updates.json"
+      - "site-health-check.py"
+  schedule:
+    - cron: "15 4 * * *"
+
+permissions:
+  contents: read
+
+jobs:
+  validate-site:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate TPJ site data
+        run: python site-health-check.py
