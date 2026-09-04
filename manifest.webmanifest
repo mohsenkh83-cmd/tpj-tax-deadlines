@@ -1,0 +1,20 @@
+{
+  "name": "تراز پردازان جوان اروند | مواعید مالیاتی و بیمه‌ای",
+  "short_name": "TPJ مواعید",
+  "description": "تقویم مواعید مالیاتی و بیمه‌ای، تعطیلات رسمی و تکالیف پیش‌رو",
+  "lang": "fa",
+  "dir": "rtl",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#08090b",
+  "theme_color": "#08090b",
+  "icons": [
+    {
+      "src": "tpj-logo.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
