@@ -638,12 +638,14 @@
       "text": "اعمال معافیت های مالیاتی بابت مودیانی که حتی برگ قطعی برای آنان صادر شده — در اجرای تبصره ۳ ماده ۳۰ آیین نامه ۲۱۹ ، اعمال معافیت های مالیاتی بابت مودیانی که حتی برگ قطعی برای آنان صادر شده ابلاغ شد.",
       "auto_apply": false,
       "review_id": "d761ec1ef1a08b630afa119d355a726dcebc656a73cfa14f1c566656089c59b1",
-      "status": "pending",
+      "status": "rejected",
       "discovered_at": "2026-09-10T13:46:30.964777+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
-      }
+      },
+      "reviewed_at": "2026-09-10T14:20:35.147Z",
+      "approved_text": ""
     },
     "0aaa33760b1f0eea103d239fd4b61296ebbc37aebe1effe53f5b0f871e7d0681": {
       "source": "اک‌پرس ـ تازه‌های مالیاتی",
