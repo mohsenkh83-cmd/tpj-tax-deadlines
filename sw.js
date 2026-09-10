@@ -1,62 +1,49 @@
-const CACHE_NAME = "tpj-static-v1";
-const STATIC_ASSETS = [
-  "./",
-  "./index.html",
-  "./tpj-logo.png",
-  "./manifest.webmanifest"
-];
-
-self.addEventListener("install", event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(STATIC_ASSETS))
-      .catch(() => null)
-  );
-  self.skipWaiting();
+// TPJ cache migration: fresh pages, live-only JSON, no caching of admin/API traffic.
+const SCOPE = new URL(self.registration.scope);
+const CACHE_PREFIX = 'tpj-public-' + encodeURIComponent(SCOPE.pathname) + '-';
+const CACHE_NAME = CACHE_PREFIX + 'v2';
+const keyFor = path => new URL(path, SCOPE).href;
+const STATIC_PATHS = new Set(['tpj-logo.png', 'manifest.webmanifest']);
+self.addEventListener('install', event => {
+  event.waitUntil(self.skipWaiting());
 });
-
-self.addEventListener("activate", event => {
-  event.waitUntil(
-    caches.keys().then(keys =>
-      Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))
-    )
-  );
-  self.clients.claim();
+self.addEventListener('activate', event => {
+  event.waitUntil((async () => {
+    const keys = await caches.keys();
+    await Promise.all(keys.filter(k => k === 'tpj-static-v1' || (k.startsWith(CACHE_PREFIX) && k !== CACHE_NAME)).map(k => caches.delete(k)));
+    await self.clients.claim();
+  })());
 });
-
-self.addEventListener("fetch", event => {
-  const req = event.request;
-  if (req.method !== "GET") return;
-
-  const url = new URL(req.url);
-
-  // JSON data must stay fresh: network first, cache fallback.
-  if (
-    url.pathname.endsWith("/deadlines.json") ||
-    url.pathname.endsWith("/holidays.json") ||
-    url.pathname.endsWith("/latest-updates.json") ||
-    url.pathname.endsWith("/deadline-changes.json")
-  ) {
-    event.respondWith(
-      fetch(req)
-        .then(res => {
-          const clone = res.clone();
-          caches.open(CACHE_NAME).then(cache => cache.put(req, clone));
-          return res;
-        })
-        .catch(() => caches.match(req))
-    );
+self.addEventListener('fetch', event => {
+  const req = event.request, url = new URL(req.url);
+  if (req.method !== 'GET' || url.origin !== SCOPE.origin || !url.pathname.startsWith(SCOPE.pathname)) return;
+  if (req.headers.has('Authorization')) return;
+  const path = url.pathname.slice(SCOPE.pathname.length);
+  // Do not serve stale calendar/news/review data on network failure.
+  // The page's existing error handling tells the user when live data is unavailable.
+  if (path.endsWith('.json') || path === 'admin.html' || path === 'review-admin.js') {
+    event.respondWith(fetch(req, {cache:'no-store'}));
     return;
   }
-
-  // Static files: cache first, network fallback.
-  event.respondWith(
-    caches.match(req).then(cached => {
-      return cached || fetch(req).then(res => {
-        const clone = res.clone();
-        caches.open(CACHE_NAME).then(cache => cache.put(req, clone));
-        return res;
-      });
-    })
-  );
+  const isHome = path === '' || path === 'index.html';
+  if (!isHome && !STATIC_PATHS.has(path)) return;
+  const key = keyFor(isHome ? 'index.html' : path);
+  const response = (async () => {
+    try {
+      const res = await fetch(req, {cache:'no-store'});
+      if (res.ok && res.type !== 'opaque' && !res.redirected) {
+        const copy = res.clone();
+        // Cache writes cannot make a successful online response fail.
+        await caches.open(CACHE_NAME).then(c => c.put(key,copy)).catch(() => {});
+      }
+      return res;
+    } catch (err) {
+      const cached = await caches.open(CACHE_NAME).then(c => c.match(key)).catch(() => null);
+      if (cached) return cached;
+      if (isHome) return new Response('<!doctype html><html lang="fa" dir="rtl"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>اتصال اینترنت</title><p>برای دریافت آخرین اخبار و مواعید به اینترنت وصل شوید و صفحه را دوباره باز کنید.</p></html>', {status:503,headers:{'Content-Type':'text/html; charset=utf-8'}});
+      return Response.error();
+    }
+  })();
+  event.respondWith(response);
+  event.waitUntil(response.then(() => {}).catch(() => {}));
 });

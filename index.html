@@ -1316,10 +1316,17 @@ loadHolidays();
 loadUpdates();
 
 if("serviceWorker" in navigator){
-  window.addEventListener("load",function(){
-    navigator.serviceWorker.register("./sw.js").catch(function(err){
-      console.warn("TPJ service worker registration failed:",err);
-    });
+  let reloadedForWorker=false;
+  navigator.serviceWorker.addEventListener("controllerchange",()=>{
+    if(reloadedForWorker) return;
+    reloadedForWorker=true;
+    window.location.reload();
+  });
+  window.addEventListener("load",async function(){
+    try{
+      const registration=await navigator.serviceWorker.register("./sw.js",{updateViaCache:"none"});
+      await registration.update();
+    }catch(err){console.warn("TPJ service worker update unavailable:",err)}
   });
 }
 
