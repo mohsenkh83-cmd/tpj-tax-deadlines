@@ -74,13 +74,19 @@ footer{margin-top:24px;text-align:center;color:#8e949d;font-size:13px}
   .form-grid,.filters{grid-template-columns:1fr}
   .form-grid .full{grid-column:auto}
 }
+textarea{width:100%;min-height:100px;background:#0d0f12;color:#fff;border:1px solid #51555d;border-radius:10px;padding:10px;font:inherit}
+a{color:#f0c96d;overflow-wrap:anywhere}button:disabled{opacity:.45;cursor:not-allowed}
+.review-card{margin:18px 0;padding:18px;border:1px solid #514022;border-radius:14px}
+.review-card h3{margin:0 0 8px}.review-card label{font-size:14px;margin-top:10px}
+.old-date{padding:10px;background:#1c2029;margin:10px 0;border-radius:8px}
+#connectionStatus{white-space:pre-wrap}#reviewList{overflow-wrap:anywhere}
 </style>
 </head>
 <body>
 <div class="wrap">
 <header>
   <h1>مدیریت مواعید TPJ</h1>
-  <div class="sub">ویرایش ساده‌ی مواعید بدون دستکاری کد JSON</div>
+  <div class="sub">بررسی خبرها، تأیید انتشار و مدیریت مواعید</div>
 
   <div class="toolbar">
     <label class="file-btn">بارگذاری deadlines.json
@@ -92,9 +98,22 @@ footer{margin-top:24px;text-align:center;color:#8e949d;font-size:13px}
   </div>
 </header>
 
-<div class="notice">
-بعد از پایان ویرایش، روی «دانلود deadlines.json» بزن و فایل دانلودشده را در GitHub جایگزین فایل <b>deadlines.json</b> کن.
-</div>
+<section class="panel" id="connection">
+<h2>اتصال مدیریت</h2>
+<p>برای خواندن صف بررسی و ثبت تأییدها، دسترسی همین مخزن را وارد کن. کلید فقط تا زمان بستن این صفحه در حافظه می‌ماند.</p>
+<label for="accessToken">کلید دسترسی GitHub — فقط مخزن tpj-tax-deadlines با دسترسی Contents: Read and write</label>
+<input id="accessToken" type="password" autocomplete="off" spellcheck="false" dir="ltr">
+<div class="actions"><button id="connect" class="primary">اتصال و دریافت آخرین اطلاعات</button><button id="disconnect">قطع اتصال</button></div>
+<p id="connectionStatus" role="status">متصل نیست</p>
+</section>
+<section class="panel" id="reviewPanel">
+<h2>خبرهای در انتظار بررسی <span id="pendingCount"></span></h2>
+<p>برای همه منابع: خبر تازه تا تأیید تو در بخش اخبار نمایش داده نمی‌شود و تقویم را تغییر نمی‌دهد.</p>
+<div id="reviewList">برای دریافت صف بررسی، اتصال را برقرار کن.</div>
+</section>
+<section class="panel"><h2>ثبت ویرایش‌های دستی تقویم</h2>
+<p>ویرایش‌های فرم پایین موقت‌اند؛ برای اعمال روی سایت دکمه زیر را بزن.</p>
+<button class="primary" id="publishCalendar">ثبت تقویم روی سایت</button></section>
 
 <section class="panel">
   <div class="filters">
@@ -160,7 +179,7 @@ footer{margin-top:24px;text-align:center;color:#8e949d;font-size:13px}
   <div id="list" class="list"></div>
 </section>
 
-<footer>این صفحه فقط ابزار مدیریت فایل است و مستقیماً اطلاعات GitHub را تغییر نمی‌دهد.</footer>
+<footer>تراز پردازان جوان اروند · <a href="mailto:tpjarvand@gmail.com">tpjarvand@gmail.com</a></footer>
 </div>
 
 <div id="status" class="status"></div>
@@ -187,7 +206,7 @@ function setup(){
   document.getElementById("defaultYear").onchange=()=>{
     data.defaultYear=Number(document.getElementById("defaultYear").value)||1405;
   };
-  document.getElementById("formMonth").onchange=render;
+  document.getElementById("formMonth").onchange=()=>{clearForm();render()};
   syncControls();render();
 }
 function syncControls(){
@@ -223,7 +242,7 @@ function render(){
     </div>`).join("");
 }
 function parseDay(v){
-  const t=v.trim();
+  const t=v.trim().replace(/[۰-۹]/g,c=>String("۰۱۲۳۴۵۶۷۸۹".indexOf(c)));
   if(/^\d+$/.test(t)) return Number(t);
   return t;
 }
@@ -242,7 +261,11 @@ function saveItem(){
   const title=document.getElementById("title").value.trim();
   const day=document.getElementById("day").value.trim();
   if(!title||!day){notify("عنوان و موعد را وارد کن",false);return}
+  const parsedDay=parseDay(day);
+  if(typeof parsedDay==="number" && !validDay(data.defaultYear,mi,parsedDay)){notify("روز واردشده برای این ماه و سال معتبر نیست",false);return}
+  const originalIndex=document.getElementById("editIndex").value;
   const item={
+    ...(originalIndex!=="" ? data.months[month][Number(originalIndex)] : {}),
     day:parseDay(day),
     type:document.getElementById("type").value,
     title,
@@ -270,6 +293,7 @@ window.deleteItem=function(i){
   if(!confirm("این موعد حذف شود؟"))return;
   const mi=Number(document.getElementById("formMonth").value);
   data.months[months[mi]].splice(i,1);
+  clearForm();
   render();notify("موعد حذف شد");
 }
 document.getElementById("saveItem").onclick=saveItem;
@@ -314,5 +338,6 @@ if(saved){
 }
 setup();
 </script>
+<script src="review-admin.js"></script>
 </body>
 </html>
