@@ -45,37 +45,59 @@ async function commitFiles(files,message){
 function renderQueue(){
  const pending=Object.values(snapshot.state.review).filter(i=>i.status==='pending').sort((a,b)=>(b.discovered_at||'').localeCompare(a.discovered_at||''));
  byId('pendingCount').textContent='('+pending.length+')';
- byId('reviewList').replaceChildren();
- if(!pending.length){byId('reviewList').textContent='خبری در انتظار بررسی نیست.';return}
- for(const item of pending){
- const id=item.review_id;if(!/^[a-f0-9]{64}$/.test(id))continue;
+ const root=byId('reviewList');root.replaceChildren();
+ if(!pending.length){root.textContent='خبری در انتظار بررسی نیست.';return}
+ for(const item of pending)renderReviewCard(item,root);
+}
+function renderReviewCard(item,host){
+ const id=item.review_id;if(!/^[a-f0-9]{64}$/.test(id))return;
  const card=document.createElement('article');card.className='review-card';
- const link=safeLink(item.link), suggestion=item.suggestion||{};
- const date=suggestion.deadline||{};
- const options=[];
- for(const month of months)(snapshot.calendar.months[month]||[]).forEach((e,i)=>options.push(`<option value="${months.indexOf(month)}:${i}">${esc(e.title)} — ${esc(e.period)} — ${esc(e.day)} ${esc(month)}</option>`));
+ const link=safeLink(item.link);
  card.innerHTML=`<h3>${esc(item.source)}</h3><div class="meta">${esc(item.date||'تاریخ انتشار مشخص نیست')}</div>
  ${link?`<a href="${esc(link)}" target="_blank" rel="noopener noreferrer">بازکردن خبر اصلی</a>`:''}
- <label for="text-${id}">متن قابل انتشار — امکان ویرایش</label><textarea id="text-${id}">${esc(item.text)}</textarea>
- <details><summary>اصلاح موعد همراه با انتشار</summary>
- <label for="target-${id}">موعد و دوره‌ای که باید تغییر کند</label><select id="target-${id}"><option value="">خودت موعد مرتبط را انتخاب کن</option>${options.join('')}</select>
- <div class="old-date" id="old-${id}">هنوز موعدی انتخاب نشده است.</div>
- <div class="form-grid"><div><label for="month-${id}">ماه جدید</label><select id="month-${id}">${months.map(m=>`<option ${m===date.month?'selected':''}>${m}</option>`).join('')}</select></div>
- <div><label for="day-${id}">روز جدید</label><input id="day-${id}" inputmode="numeric" value="${esc(date.day||'')}"></div>
- <div><label for="year-${id}">سال موعد (باید با سال تقویم برابر باشد)</label><input id="year-${id}" inputmode="numeric" value="${esc(date.year||snapshot.calendar.defaultYear)}"></div></div>
- <p>تاریخ پیشنهادی از متن استخراج شده؛ دوره و تاریخ را با خبر اصلی تطبیق بده.</p>
- <label><input type="checkbox" style="width:auto" id="confirmed-${id}"> دوره، سال و تاریخ جدید را بررسی کردم.</label></details>
- <div class="actions"><button data-action="publish" class="primary">فقط انتشار خبر</button><button data-action="apply">انتشار و اعمال تاریخ</button><button data-action="reject" class="danger">رد خبر</button></div>`;
- card.querySelector('select').onchange=()=>{
- const v=byId('target-'+id).value;byId('confirmed-'+id).checked=false;
- if(!v){byId('old-'+id).textContent='هنوز موعدی انتخاب نشده است.';return}
- const [mi,i]=v.split(':').map(Number),e=snapshot.calendar.months[months[mi]][i];
- byId('old-'+id).textContent=`موعد فعلی: ${e.day} ${months[mi]} ${snapshot.calendar.defaultYear} · ${e.title} · ${e.period||''}`;
- };
+ <label for="text-${id}">متن قابل انتشار — امکان ویرایش</label>
+ <textarea id="text-${id}">${esc(item.text)}</textarea>
+ <details><summary>اصلاح یک یا چند موعد همراه با انتشار</summary>
+ <p>برای هر موعد، دوره و تاریخ جدید را جداگانه انتخاب کن. همه انتخاب‌ها با هم ثبت می‌شوند.</p>
+ <div id="targets-${id}"></div><button type="button" id="add-target-${id}">افزودن ردیف موعد</button></details>
+ <div class="actions"><button data-action="publish" class="primary">فقط انتشار خبر</button><button data-action="apply">انتشار و اعمال موعدهای انتخاب‌شده</button><button data-action="reject" class="danger">رد خبر</button></div>`;
+
+ host.append(card);
+ byId('add-target-'+id).onclick=()=>addTargetRow(item);
+ addTargetRow(item);
  card.querySelectorAll('button[data-action]').forEach(b=>b.onclick=()=>decide(id,b.dataset.action));
- byId('reviewList').append(card);
- for(const field of ['month','day','year'])byId(field+'-'+id).onchange=()=>byId('confirmed-'+id).checked=false;
- }
+}
+let targetRowCounter=0;
+function addTargetRow(item){
+ const id=item.review_id,prefix=id+'-'+(++targetRowCounter),row=document.createElement('div');
+ row.className='old-date';row.dataset.targetRow=prefix;
+ const date=item.suggestion?.deadline||{};
+ const options=[];
+ for(const month of months)(snapshot.calendar.months[month]||[]).forEach((e,i)=>options.push(`<option value="${months.indexOf(month)}:${i}">${esc(e.title)} — ${esc(e.period)} — ${esc(e.day)} ${esc(month)}</option>`));
+ row.innerHTML=`<label for="target-${prefix}">موعد و دوره موردنظر</label><select id="target-${prefix}" data-field="target"><option value="">موعد مرتبط را انتخاب کن</option>${options.join('')}</select>
+ <p data-old>هنوز موعدی انتخاب نشده است.</p><div class="form-grid">
+ <div><label for="month-${prefix}">ماه جدید</label><select id="month-${prefix}" data-field="month">${months.map(m=>`<option ${m===date.month?'selected':''}>${m}</option>`).join('')}</select></div>
+ <div><label for="day-${prefix}">روز جدید</label><input id="day-${prefix}" data-field="day" inputmode="numeric" value="${esc(date.day||'')}"></div>
+ <div><label for="year-${prefix}">سال موعد</label><input id="year-${prefix}" data-field="year" inputmode="numeric" value="${esc(date.year||snapshot.calendar.defaultYear)}"></div></div>
+ <label><input data-field="confirmed" type="checkbox" style="width:auto"> دوره، سال و تاریخ این موعد را بررسی کردم.</label><button type="button" data-remove>حذف این انتخاب</button>`;
+ byId('targets-'+id).append(row);
+ const get=f=>row.querySelector('[data-field="'+f+'"]');
+ get('target').onchange=()=>{get('confirmed').checked=false;const v=get('target').value;
+ if(!v){row.querySelector('[data-old]').textContent='هنوز موعدی انتخاب نشده است.';return}
+ const [mi,i]=v.split(':').map(Number),e=snapshot.calendar.months[months[mi]][i];
+ row.querySelector('[data-old]').textContent=`موعد فعلی: ${e.day} ${months[mi]} ${snapshot.calendar.defaultYear} · ${e.title} · ${e.period||''}`;
+ };
+ for(const f of ['month','day','year'])get(f).oninput=()=>get('confirmed').checked=false;
+ row.querySelector('[data-remove]').onclick=()=>row.remove();
+}
+function selectedChanges(id){
+ return [...byId('targets-'+id).querySelectorAll('[data-target-row]')].map(row=>{
+ const get=f=>row.querySelector('[data-field="'+f+'"]');
+ if(!get('target').value)throw Error('برای هر ردیف یک موعد انتخاب کن یا ردیف خالی را حذف کن.');
+ if(!get('confirmed').checked)throw Error('دوره و تاریخ همه موعدهای انتخاب‌شده را بررسی و تیک تأیید هرکدام را فعال کن.');
+ const [mi,index]=get('target').value.split(':').map(Number);
+ return {target:{month:months[mi],index},newDate:{month:get('month').value,day:numberFa(get('day').value),year:numberFa(get('year').value)}};
+ });
 }
 function numberFa(v){return Number(String(v).replace(/[۰-۹]/g,c=>'۰۱۲۳۴۵۶۷۸۹'.indexOf(c)))}
 function validDay(year,monthIndex,day){
@@ -86,24 +108,40 @@ function validDay(year,monthIndex,day){
  for(let d=0;d<410;d++){const p=Object.fromEntries(fmt.formatToParts(new Date(start+d*86400000)).map(x=>[x.type,x.value]));if(+p.year===year&&+p.month===monthIndex+1&&+p.day===day)return true}
  return false;
 }
-function applyDecision(base,id,action,text,target,newDate,now){
+function applyDecision(base,id,action,text,selections,now){
  const next=clone(base),item=next.state.review[id];
- if(!item||item.status!=='pending')throw Error('این خبر دیگر در انتظار بررسی نیست.');
+ const changing=action==='apply';
  if(!['publish','apply','reject'].includes(action))throw Error('تصمیم نامعتبر است.');
+ if(!item||item.status!=='pending')throw Error('وضعیت این خبر تغییر کرده است؛ دوباره اطلاعات را دریافت کن.');
  if(action!=='reject'&&!text.trim())throw Error('متن خبر خالی است.');
- if(action==='apply'){
-  const {month,index}=target||{},event=next.calendar.months[month]?.[index];
-  if(!event)throw Error('موعد مرتبط را انتخاب کن.');
-  if(newDate.year!==next.calendar.defaultYear)throw Error('سال خبر با تقویم فعلی برابر نیست. برای این مورد ابتدا سال و دوره را بررسی کن.');
-  if(!months.includes(newDate.month)||!validDay(newDate.year,months.indexOf(newDate.month),newDate.day))throw Error('روز یا ماه جدید معتبر نیست.');
-  const old={month,day:event.day,year:next.calendar.defaultYear};
-  const updated={...event,day:newDate.day,source:safeLink(item.link),updated_at_utc:now,previous_deadline:old};
-  next.calendar.months[month].splice(index,1);(next.calendar.months[newDate.month]??=[]).push(updated);
-  next.calendar.months[newDate.month].sort((a,b)=>(numberFa(a.day)||99)-(numberFa(b.day)||99));
-  next.log.changes.push({applied_at_utc:now,review_id:id,task:event.title,period:event.period||'',old_deadline:old,new_deadline:newDate,source:item.source,source_link:item.link,source_text:item.text,approved_text:text});
+ if(changing){
+  if(!Array.isArray(selections)||!selections.length)throw Error('حداقل یک موعد را انتخاب کن.');
+  const keys=new Set();
+  // Validate and capture every original record BEFORE removing or sorting anything.
+  const plans=selections.map(({target,newDate})=>{
+   const {month,index}=target||{};
+   if(!months.includes(month)||!Number.isInteger(index)||index<0)throw Error('موعد مرتبط معتبر نیست.');
+   const key=month+':'+index;
+   if(keys.has(key))throw Error('یک موعد را دوبار انتخاب کرده‌ای؛ انتخاب تکراری را حذف کن.');keys.add(key);
+   const event=next.calendar.months[month]?.[index];if(!event)throw Error('موعد انتخاب‌شده پیدا نشد.');
+   if(newDate?.year!==next.calendar.defaultYear)throw Error('سال موعد باید با سال تقویم برابر باشد.');
+   if(!months.includes(newDate.month)||!validDay(newDate.year,months.indexOf(newDate.month),newDate.day))throw Error('روز یا ماه جدید معتبر نیست.');
+   if(month===newDate.month&&numberFa(event.day)===newDate.day)throw Error('تاریخ جدید «'+event.title+'» با تاریخ فعلی برابر است؛ این انتخاب را حذف یا اصلاح کن.');
+   return {month,index,event,newDate,old:{month,day:event.day,year:next.calendar.defaultYear}};
+  });
+  // Descending indices avoid moving the wrong record when several share a month.
+  for(const month of months){const indices=plans.filter(p=>p.month===month).map(p=>p.index).sort((a,b)=>b-a);for(const index of indices)next.calendar.months[month].splice(index,1)}
+  const touched=new Set();
+  for(const p of plans){
+   const updated={...p.event,day:p.newDate.day,source:safeLink(item.link),updated_at_utc:now,previous_deadline:p.old};
+   (next.calendar.months[p.newDate.month]??=[]).push(updated);touched.add(p.newDate.month);
+   next.log.changes.push({applied_at_utc:now,review_id:id,task:p.event.title,period:p.event.period||'',old_deadline:p.old,new_deadline:p.newDate,source:item.source,source_link:item.link,source_text:item.text,approved_text:text});
+  }
+  for(const month of touched)next.calendar.months[month].sort((a,b)=>(numberFa(a.day)||99)-(numberFa(b.day)||99));
  }
- item.status=action==='reject'?'rejected':action==='apply'?'approved_applied':'approved';
- item.reviewed_at=now;item.approved_text=action==='reject'?'':text;
+ item.status=action==='reject'?'rejected':changing?'approved_applied':'approved';
+ item.reviewed_at=now;
+ item.approved_text=action==='reject'?'':text;
  if(action!=='reject'){
   next.latest.items=next.latest.items.filter(i=>i.review_id!==id&&(!item.link||i.link!==item.link));
   next.latest.items.unshift({source:item.source,date:item.date||'',link:safeLink(item.link),text,review_id:id,approved_at:now});
@@ -111,22 +149,24 @@ function applyDecision(base,id,action,text,target,newDate,now){
  }
  return next;
 }
+function decisionFiles(next,action){
+ const files={'monitor-state.json':asJSON(next.state)};
+ if(action==='publish'||action==='apply')files['latest-updates.json']=asJSON(next.latest);
+ if(action==='apply'){files['deadlines.json']=asJSON(next.calendar);files['deadline-changes.json']=asJSON(next.log)}
+ return files;
+}
 async function decide(id,action){
  if(busy||!snapshot)return;
  try{
  if(asJSON(data)!==asJSON(snapshot.calendar))throw Error('ویرایش ذخیره‌نشده در تقویم داری؛ ابتدا آن را ثبت کن یا دوباره اطلاعات را دریافت کن.');
- const value=byId('target-'+id).value,parts=value.split(':').map(Number);
- const target=value?{month:months[parts[0]],index:parts[1]}:null;
- const newDate={month:byId('month-'+id).value,day:numberFa(byId('day-'+id).value),year:numberFa(byId('year-'+id).value)};
- if(action==='apply'&&!byId('confirmed-'+id).checked)throw Error('ابتدا دوره و تاریخ جدید را بررسی و تیک تأیید را فعال کن.');
- const next=applyDecision(snapshot,id,action,byId('text-'+id).value.trim(),target,newDate,new Date().toISOString());
- const message=action==='reject'?'خبر رد شود؟':action==='apply'?`خبر منتشر و موعد انتخاب‌شده به ${newDate.day} ${newDate.month} ${newDate.year} تغییر کند؟`:'این متن در اخبار سایت منتشر شود؟';
+ const changing=action==='apply';
+ const selections=changing?selectedChanges(id):[];
+ const next=applyDecision(snapshot,id,action,byId('text-'+id).value.trim(),selections,new Date().toISOString());
+ const summary=selections.map(({target,newDate})=>{const e=snapshot.calendar.months[target.month][target.index];return `${e.title} — ${e.period||''}\n${e.day} ${target.month} ← ${newDate.day} ${newDate.month} ${newDate.year}`}).join('\n\n');
+ const message=action==='reject'?'خبر رد شود؟':changing?'خبر منتشر و این موعدها تغییر کنند؟'+'\n\n'+summary:'این متن در اخبار سایت منتشر شود؟';
  if(!confirm(message))return;
  setBusy(true);
- const files={'monitor-state.json':asJSON(next.state)};
- if(action!=='reject')files['latest-updates.json']=asJSON(next.latest);
- if(action==='apply'){files['deadlines.json']=asJSON(next.calendar);files['deadline-changes.json']=asJSON(next.log)}
- await commitFiles(files,'TPJ review: '+action+' '+id.slice(0,12));
+ await commitFiles(decisionFiles(next,action),'TPJ review: '+action+' '+id.slice(0,12));
  await refreshAfterSuccess();
  }catch(e){byId('connectionStatus').textContent=e.message;notify(e.message,false)}finally{setBusy(false)}
 }
