@@ -619,9 +619,11 @@ a,button{
   <section class="live-wrap" id="latest">
     <div class="live-head">
       <h2>آخرین تغییرات مواعید مالیاتی و بیمه‌ای</h2>
-      <div class="live-check">آخرین بررسی: <span id="lastCheck">...</span></div>
+      <div class="live-check">آخرین ثبت اخبار: <span id="lastCheck">...</span></div>
+      <button class="btn" type="button" id="refreshData">دریافت آخرین اطلاعات</button>
     </div>
     <div id="liveUpdates">در حال دریافت آخرین اطلاعیه‌ها...</div>
+    <button class="btn" type="button" id="toggleNews" hidden>نمایش همه خبرها</button>
   </section>
 
 
@@ -665,7 +667,7 @@ a,button{
     <div class="contact-footer-title">ارتباط با تراز پردازان جوان اروند</div>
     <div class="contact-footer-grid">
       <a href="tel:09999330687"><b>تلفن</b><span>۰۹۹۹۹۳۳۰۶۸۷</span></a>
-      <a href="mailto:tarazpardazanjavan@gmail.com"><b>ایمیل</b><span>tarazpardazanjavan@gmail.com</span></a>
+      <a href="mailto:tpjarvand@gmail.com"><b>ایمیل</b><span>tpjarvand@gmail.com</span></a>
       <div class="contact-footer-address"><b>آدرس</b><span>آبادان، خیابان گمرک، آپارتمان برلیان، طبقه ۳، واحد ۱۰۱</span></div>
     </div>
     <div class="contact-footer-actions">
@@ -893,7 +895,8 @@ function renderEvents(events){
 function showDay(day,isFriday,hol){
   const name=monthNames[selectedMonth];
   const events=(data.months?.[name]||[]).filter(e=>e.day===day);
-  if(events.length) renderEvents(events);
+  renderEvents(events);
+  if(!events.length) document.getElementById("events").innerHTML='<div class="event">برای این روز موعدی ثبت نشده است.</div>';
   const parts=[`${faNum(day)} ${name} ${faNum(selectedYear)}`];
   if(isFriday) parts.push("جمعه");
   if(hol?.title) parts.push("تعطیل رسمی: "+hol.title);
@@ -1150,13 +1153,15 @@ function validateMonthObject(obj){
   return monthNames.every(m=>Array.isArray(obj?.[m]));
 }
 
-async function loadDeadlines(){
+async function loadDeadlines(preserveSelection=false){
   try{
     const r=await fetch("deadlines.json?ts="+Date.now(),{cache:"no-store"});
     if(!r.ok) throw new Error("HTTP "+r.status);
-    data=await r.json();
-    if(data.defaultYear) selectedYear=Number(data.defaultYear);
-    if(Number.isInteger(data.defaultMonth)) selectedMonth=data.defaultMonth;
+    const freshData=await r.json();
+    if(!validateMonthObject(freshData.months)) throw new Error("Invalid calendar");
+    data=freshData;
+    if(!preserveSelection && data.defaultYear) selectedYear=Number(data.defaultYear);
+    if(!preserveSelection && Number.isInteger(data.defaultMonth)) selectedMonth=data.defaultMonth;
 
     const lm=r.headers.get("last-modified");
     const explicit=data.last_update_utc||data.updated_at_utc||data.last_check_utc;
@@ -1187,29 +1192,69 @@ async function loadHolidays(){
   renderCalendar();
   refreshSystemHealth();
 }
-async function loadUpdates(){
-  try{
-    const r=await fetch("latest-updates.json?ts="+Date.now(),{cache:"no-store"});
-    const j=await r.json();
-    document.getElementById("lastCheck").textContent=j.last_check_utc?new Date(j.last_check_utc).toLocaleString("fa-IR"):"نامشخص";
-    setStatus("statusUpdates",j.last_check_utc?formatStatusDate(j.last_check_utc):"نامشخص",j.last_check_utc?"status-ok":"status-warn");
-    const items=(j.items||[]).slice().reverse().slice(0,6);
-    const box=document.getElementById("liveUpdates");
-    if(!items.length){box.innerHTML='<div class="live-card">در آخرین بررسی، اطلاعیه جدید مرتبطی شناسایی نشد.</div>';return}
-    box.innerHTML=items.map(x=>`<article class="live-card">
+let newsItems=[];
+let showAllNews=false;
+function newsTime(item){
+  const value=Date.parse(item.approved_at||item.date||"");
+  return Number.isFinite(value)?value:0;
+}
+function orderedNews(items){
+  return items.slice().sort((a,b)=>newsTime(b)-newsTime(a));
+}
+function safeNewsLink(value){
+  try{const u=new URL(value);return ["http:","https:"].includes(u.protocol)?u.href:""}catch{return ""}
+}
+function renderNews(){
+  const items=showAllNews?newsItems:newsItems.slice(0,6);
+  const box=document.getElementById("liveUpdates");
+  const toggle=document.getElementById("toggleNews");
+  toggle.hidden=newsItems.length<=6;
+  toggle.textContent=showAllNews?"نمایش کمتر":"نمایش همه خبرها";
+  if(!items.length){box.innerHTML='<div class="live-card">هنوز خبری برای نمایش ثبت نشده است.</div>';return}
+  box.innerHTML=items.map(x=>{
+    const link=safeNewsLink(x.link);
+    return `<article class="live-card">
       <div class="live-source">${esc(x.source)}</div>
       <div>${esc(x.text)}</div>
       <div class="live-meta">
-        ${x.date?`<span>${new Date(x.date).toLocaleString("fa-IR")}</span>`:""}
-        ${x.link?`<a href="${esc(x.link)}" target="_blank" rel="noopener">مشاهده منبع</a>`:""}
+        ${x.date?`<span>تاریخ خبر: ${esc(formatStatusDate(x.date))}</span>`:""}
+        ${x.approved_at?`<span>تأیید انتشار: ${esc(formatStatusDate(x.approved_at))}</span>`:""}
+        ${link?`<a href="${esc(link)}" target="_blank" rel="noopener noreferrer">مشاهده منبع</a>`:""}
       </div>
-    </article>`).join("");
+    </article>`;
+  }).join("");
+}
+document.getElementById("toggleNews").onclick=()=>{showAllNews=!showAllNews;renderNews()};
+async function loadUpdates(){
+  try{
+    const r=await fetch("latest-updates.json?ts="+Date.now(),{cache:"no-store"});
+    if(!r.ok) throw new Error("HTTP "+r.status);
+    const j=await r.json();
+    if(!Array.isArray(j.items)) throw new Error("Invalid news data");
+    document.getElementById("lastCheck").textContent=formatStatusDate(j.last_check_utc);
+    setStatus("statusUpdates",formatStatusDate(j.last_check_utc),j.last_check_utc?"status-ok":"status-warn");
+    newsItems=orderedNews(j.items);
+    renderNews();
   }catch(e){
-    document.getElementById("liveUpdates").innerHTML='<div class="live-card">دریافت اطلاعیه‌ها موقتاً ممکن نیست.</div>';
+    document.getElementById("liveUpdates").innerHTML='<div class="live-card">دریافت اطلاعیه‌ها موقتاً ممکن نیست؛ دریافت آخرین اطلاعات را بزنید.</div>';
+    document.getElementById("toggleNews").hidden=true;
     setStatus("statusUpdates","خطا در دریافت","status-bad");
   }
   refreshSystemHealth();
 }
+let refreshInProgress=false;
+async function refreshPublicData(){
+  if(refreshInProgress) return;
+  refreshInProgress=true;
+  const button=document.getElementById("refreshData");
+  button.disabled=true;button.textContent="در حال دریافت…";
+  closeTaskModal();
+  try{await Promise.all([loadDeadlines(true),loadUpdates()])}
+  finally{refreshInProgress=false;button.disabled=false;button.textContent="دریافت آخرین اطلاعات"}
+}
+document.getElementById("refreshData").onclick=refreshPublicData;
+document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible")refreshPublicData()});
+
 function refreshSystemHealth(){
   const deadlineOK=validateMonthObject(data?.months);
   const holidayYear=holidaysData?.years?.[String(selectedYear)];
