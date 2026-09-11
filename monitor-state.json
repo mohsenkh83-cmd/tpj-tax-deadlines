@@ -1,6 +1,6 @@
 {
   "initialized": true,
-  "last_check_utc": "2026-09-11T10:56:46.596092+00:00",
+  "last_check_utc": "2026-09-11T11:18:43.208478+00:00",
   "seen": [
     "inta_press/5463",
     "inta_press/5464",
@@ -766,6 +766,21 @@
           "month": "شهریور",
           "year": 1405
         }
+      }
+    },
+    "34d1eab9d3115a554edfc84a3689fdf9e408e474945e911e7f5ebd39352f637b": {
+      "source": "سازمان تأمین اجتماعی",
+      "id": "tamin_media/3080",
+      "date": "2026-09-11T11:09:10+00:00",
+      "link": "https://t.me/tamin_media/3080",
+      "text": "🔷 مثلث طلایی اوراق گام در تأمین اجتماعی تسویه غیرتورمی مطالبات بیمه‌ای؛ هم‌راستایی منافع صندوق، کارفرما و بازارکار 🔹 کانال‌ رسمی تأمین اجتماعی: @Tamin_Media",
+      "auto_apply": true,
+      "review_id": "34d1eab9d3115a554edfc84a3689fdf9e408e474945e911e7f5ebd39352f637b",
+      "status": "pending",
+      "discovered_at": "2026-09-11T11:18:43.208478+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
       }
     }
   },
