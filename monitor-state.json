@@ -836,12 +836,14 @@
       "text": "مدیرکل امور مالیاتی لرستان: ۵۵ پروژه زیربنایی در استان توسط مودیان تامین اعتبار می‌شود 🔹 مدیرکل امور مالیاتی استان لرستان از فراهم شدن امکان تامین اعتبار ۵۵ پروژه استان توسط مودیان در قالب طرح نشان‌دار کردن مالیات در سال‌جاری خبر داد. https://www.intamedia.ir/news/id/58062",
       "auto_apply": true,
       "review_id": "52fb5ca0bb667d8ea59cf248e545c3b99f0896847845beb5f11b5b2c50ab0b6a",
-      "status": "pending",
+      "status": "rejected",
       "discovered_at": "2026-09-12T10:30:35.895030+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
-      }
+      },
+      "reviewed_at": "2026-09-12T10:53:37.937Z",
+      "approved_text": ""
     }
   },
   "review_version": 1,
