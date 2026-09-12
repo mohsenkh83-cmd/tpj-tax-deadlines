@@ -1,6 +1,6 @@
 {
   "initialized": true,
-  "last_check_utc": "2026-09-12T10:18:01.440006+00:00",
+  "last_check_utc": "2026-09-12T10:30:35.895030+00:00",
   "seen": [
     "inta_press/5463",
     "inta_press/5464",
@@ -823,6 +823,21 @@
       "review_id": "84814fa6c1d7219c99c0bff1f079390966d6298137ba6d067d2ede2ae6320567",
       "status": "pending",
       "discovered_at": "2026-09-12T09:18:13.081990+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
+      }
+    },
+    "52fb5ca0bb667d8ea59cf248e545c3b99f0896847845beb5f11b5b2c50ab0b6a": {
+      "source": "سازمان امور مالیاتی کشور",
+      "id": "inta_press/5527",
+      "date": "2026-09-12T10:20:24+00:00",
+      "link": "https://t.me/inta_press/5527",
+      "text": "مدیرکل امور مالیاتی لرستان: ۵۵ پروژه زیربنایی در استان توسط مودیان تامین اعتبار می‌شود 🔹 مدیرکل امور مالیاتی استان لرستان از فراهم شدن امکان تامین اعتبار ۵۵ پروژه استان توسط مودیان در قالب طرح نشان‌دار کردن مالیات در سال‌جاری خبر داد. https://www.intamedia.ir/news/id/58062",
+      "auto_apply": true,
+      "review_id": "52fb5ca0bb667d8ea59cf248e545c3b99f0896847845beb5f11b5b2c50ab0b6a",
+      "status": "pending",
+      "discovered_at": "2026-09-12T10:30:35.895030+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
