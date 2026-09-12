@@ -1,6 +1,6 @@
 {
   "initialized": true,
-  "last_check_utc": "2026-09-12T21:18:16.290383+00:00",
+  "last_check_utc": "2026-09-12T21:29:57.965567+00:00",
   "seen": [
     "inta_press/5463",
     "inta_press/5464",
@@ -1006,6 +1006,21 @@
       "review_id": "060449df88b87622963f1d58abb34c6b2eec54c7374498ff5cf11f630a4c99a6",
       "status": "pending",
       "discovered_at": "2026-09-12T20:57:20.117252+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
+      }
+    },
+    "5e3f65e24e2f37d9a90b66a2d97695ef3f430cdd699f8f3f41f985acca1d8c06": {
+      "source": "اک‌پرس ـ تازه‌های مالیاتی",
+      "id": "accpress:https://www.accpress.com/news/1405/06/%d8%a8%d8%b1%d8%b1%d8%b3%db%8c-%d9%85%d8%ac%d8%af%d8%af-%d8%a7%d9%88%d8%b1%d8%a7%d9%82-%d8%aa%d8%b4%d8%ae%db%8c%d8%b5-%d8%b3%db%8c%d8%b3%d8%aa%d9%85%db%8c-%d8%b9%d9%85%d9%84%da%a9%d8%b1%d8%af-%d8%b3/",
+      "date": "2026-09-12T21:28:06+00:00",
+      "link": "https://www.accpress.com/news/1405/06/%d8%a8%d8%b1%d8%b1%d8%b3%db%8c-%d9%85%d8%ac%d8%af%d8%af-%d8%a7%d9%88%d8%b1%d8%a7%d9%82-%d8%aa%d8%b4%d8%ae%db%8c%d8%b5-%d8%b3%db%8c%d8%b3%d8%aa%d9%85%db%8c-%d8%b9%d9%85%d9%84%da%a9%d8%b1%d8%af-%d8%b3/",
+      "text": "بررسی مجدد اوراق تشخیص سیستمی عملکرد سال ١٣٩٩ — معاون تحول هوشمند نظام مالیاتی طی بخشنامه ای نحوه بررسی مجدد اوراق تشخیص سیستمی عملکرد سال ١٣٩٩راتشریح کرد.",
+      "auto_apply": false,
+      "review_id": "5e3f65e24e2f37d9a90b66a2d97695ef3f430cdd699f8f3f41f985acca1d8c06",
+      "status": "pending",
+      "discovered_at": "2026-09-12T21:29:57.965567+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
