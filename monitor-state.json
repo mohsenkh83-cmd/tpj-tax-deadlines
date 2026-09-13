@@ -1004,12 +1004,14 @@
       "text": "نامه مورد شکایت دفتر حسابرسی مالیاتی در خصوص واحدهای تولیدی و صنعتی — نامه مورد شکایت دفتر حسابرسی مالیاتی در خصوص واحدهای تولیدی و صنعتی مناطق کمتر توسعه یافته که ابطال نشد.",
       "auto_apply": false,
       "review_id": "060449df88b87622963f1d58abb34c6b2eec54c7374498ff5cf11f630a4c99a6",
-      "status": "pending",
+      "status": "rejected",
       "discovered_at": "2026-09-12T20:57:20.117252+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
-      }
+      },
+      "reviewed_at": "2026-09-13T10:06:19.711Z",
+      "approved_text": ""
     },
     "5e3f65e24e2f37d9a90b66a2d97695ef3f430cdd699f8f3f41f985acca1d8c06": {
       "source": "اک‌پرس ـ تازه‌های مالیاتی",
