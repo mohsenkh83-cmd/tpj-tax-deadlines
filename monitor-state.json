@@ -1,6 +1,6 @@
 {
   "initialized": true,
-  "last_check_utc": "2026-09-13T10:44:07.127179+00:00",
+  "last_check_utc": "2026-09-13T10:55:54.776960+00:00",
   "seen": [
     "inta_press/5463",
     "inta_press/5464",
@@ -1086,6 +1086,21 @@
       "review_id": "47b9d8d34b0992fc6c3bab9e0be2b5fdd436f6757ec37eaaa04cab217e19dbff",
       "status": "pending",
       "discovered_at": "2026-09-13T10:22:13.993788+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
+      }
+    },
+    "b2dd0f8b61f7872c305743c2cb96f3347b18af6536b5d1d56ed65d32ac56f25e": {
+      "source": "سازمان امور مالیاتی کشور",
+      "id": "inta_press/5534",
+      "date": "2026-09-13T10:53:52+00:00",
+      "link": "https://t.me/inta_press/5534",
+      "text": "مدیرکل امور مالیاتی هرمزگان: مودیان در تامین اعتبار ۷۳ پروژه زیربنایی استان سهیم می‌شوند 🔹 مدیرکل امور مالیاتی استان هرمزگان از اجرای سومین سال طرح «نشان‌دار کردن مالیات» خبر داد و گفت: مودیان مشمول در سال ۱۴۰۵ می‌توانند محل هزینه‌کرد مالیات خود را از میان ۷۳ پروژه زیربنایی انتخاب کنند؛ پروژه‌هایی که برای تکمیل آن‌ها، ۱۰ هزار و ۷۰ میلیارد ریال اعتبار نیاز است. https://www.intamedia.ir/news/id/58190",
+      "auto_apply": true,
+      "review_id": "b2dd0f8b61f7872c305743c2cb96f3347b18af6536b5d1d56ed65d32ac56f25e",
+      "status": "pending",
+      "discovered_at": "2026-09-13T10:55:54.776960+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
