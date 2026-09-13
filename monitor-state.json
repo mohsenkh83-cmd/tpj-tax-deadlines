@@ -1,6 +1,6 @@
 {
   "initialized": true,
-  "last_check_utc": "2026-09-13T03:18:46.101335+00:00",
+  "last_check_utc": "2026-09-13T03:32:34.172791+00:00",
   "seen": [
     "inta_press/5463",
     "inta_press/5464",
@@ -1021,6 +1021,21 @@
       "review_id": "5e3f65e24e2f37d9a90b66a2d97695ef3f430cdd699f8f3f41f985acca1d8c06",
       "status": "pending",
       "discovered_at": "2026-09-12T21:29:57.965567+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
+      }
+    },
+    "9e9374d0cfbc0119780d297d0d42b2501bcb6ec9fadb8fa035927c3c221a2ead": {
+      "source": "سازمان تأمین اجتماعی",
+      "id": "tamin_media/3090",
+      "date": "2026-09-13T03:26:21+00:00",
+      "link": "https://t.me/tamin_media/3090",
+      "text": "🗓️ امروز با تأمین اجتماعی 🔷 طبق آخرین سالنامه آماری منتشر شده از سوی مرکز فناوری اطلاعات، آمار و محاسبات سازمان، تا پایان سال گذشته، ۴۶ میلیون و ۴۳۹ هزار نفر در کشور تحت پوشش خدمات سازمان تأمین اجتماعی هستند که ۳۷ میلیون نفر بیمه‌شده اصلی و تبعی و بیش از ۹ میلیون نفر بازنشسته و مستمری‌بگیر اصلی و تبعی هستند. 🔹 کانال‌ رسمی تأمین اجتماعی: @Tamin_Media",
+      "auto_apply": true,
+      "review_id": "9e9374d0cfbc0119780d297d0d42b2501bcb6ec9fadb8fa035927c3c221a2ead",
+      "status": "pending",
+      "discovered_at": "2026-09-13T03:32:34.172791+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
