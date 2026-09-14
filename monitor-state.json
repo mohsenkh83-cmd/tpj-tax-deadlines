@@ -1199,12 +1199,14 @@
       "text": "گزارش تصویری نشست هم اندیشی رئیس کل سازمان امور مالیاتی کشور با رئیس سازمان سینمایی و مدیرعامل بنیاد فارابی",
       "auto_apply": true,
       "review_id": "2aa24dc3d10d0c39ae1f2578bfe038204424e303d46930b0cb8cf77875c28d96",
-      "status": "pending",
+      "status": "rejected",
       "discovered_at": "2026-09-14T06:51:42.320614+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
-      }
+      },
+      "reviewed_at": "2026-09-14T09:23:26.316Z",
+      "approved_text": ""
     },
     "0e8e48b191b0e3aa4b2939eb043f64d5e9af1d5aed8050327ec6505267d4e74f": {
       "source": "سازمان امور مالیاتی کشور",
