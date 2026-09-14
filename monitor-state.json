@@ -1,6 +1,6 @@
 {
   "initialized": true,
-  "last_check_utc": "2026-09-14T18:22:16.087404+00:00",
+  "last_check_utc": "2026-09-14T18:49:46.209845+00:00",
   "seen": [
     "inta_press/5463",
     "inta_press/5464",
@@ -1314,6 +1314,21 @@
       "review_id": "5105892bedc6067c44f4ccc7fcc9e684ca878afd06590b16747e7e43a5eb83b6",
       "status": "pending",
       "discovered_at": "2026-09-14T14:21:48.289633+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
+      }
+    },
+    "06a5fc6b3c24dc1929f657b147f891e18e10e3256f7d50efd169c974820e3978": {
+      "source": "سازمان امور مالیاتی کشور",
+      "id": "inta_press/5545",
+      "date": "2026-09-14T18:31:34+00:00",
+      "link": "https://t.me/inta_press/5545",
+      "text": "مدیرکل امور مالیاتی خراسان شمالی: رشد ۱۲۵ درصدی سهم محیط زیست استان از عوارض آلایندگی 🔹 مدیرکل امور مالیاتی استان خراسان شمالی، از وصول و توزیع ۶۳۱ میلیارد ریال از محل عوارض آلایندگی در ۵ ماهه نخست سال ۱۴۰۵ خبر داد. https://www.intamedia.ir/news/id/58314",
+      "auto_apply": true,
+      "review_id": "06a5fc6b3c24dc1929f657b147f891e18e10e3256f7d50efd169c974820e3978",
+      "status": "pending",
+      "discovered_at": "2026-09-14T18:49:46.209845+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
