@@ -1,6 +1,6 @@
 {
   "initialized": true,
-  "last_check_utc": "2026-09-14T05:32:30.432780+00:00",
+  "last_check_utc": "2026-09-14T05:46:29.616276+00:00",
   "seen": [
     "inta_press/5463",
     "inta_press/5464",
@@ -1171,6 +1171,21 @@
       "review_id": "c8f47ee3c70a0fa44ab391768fcca70959105436ff944b1c4790eea481d99e06",
       "status": "pending",
       "discovered_at": "2026-09-14T03:35:50.944689+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
+      }
+    },
+    "b4f5c3861febb3bdb5df47963c4af6b12cf77f53536b38cd0d27ee200fee5d51": {
+      "source": "سازمان تأمین اجتماعی",
+      "id": "tamin_media/3095",
+      "date": "2026-09-14T05:40:17+00:00",
+      "link": "https://t.me/tamin_media/3095",
+      "text": "🔷 امکان پرداخت اینترنتی حق‌بیمه رانندگان 🔶 کلیه رانندگان درون‌شهری و بین‌شهری می‌توانند بدون مراجعه به شعب، کارگزاری یا کافی‌نت و از طریق سامانه خدمات غیرحضوری سازمان تأمین اجتماعی به نشانی es.tamin.ir با رایانه شخصی یا موبایل در هر ساعت از شبانه‌روز نسبت به پرداخت حق‌بیمه خود اقدام کنند. 🔹 کانال‌ رسمی تأمین اجتماعی: @Tamin_Media",
+      "auto_apply": true,
+      "review_id": "b4f5c3861febb3bdb5df47963c4af6b12cf77f53536b38cd0d27ee200fee5d51",
+      "status": "pending",
+      "discovered_at": "2026-09-14T05:46:29.616276+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
