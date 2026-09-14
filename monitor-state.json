@@ -1,6 +1,6 @@
 {
   "initialized": true,
-  "last_check_utc": "2026-09-14T11:48:58.231735+00:00",
+  "last_check_utc": "2026-09-14T11:59:13.451390+00:00",
   "seen": [
     "inta_press/5463",
     "inta_press/5464",
@@ -1254,6 +1254,21 @@
       "review_id": "2c43b2b3efdc05f97f22fd655aaf3009832e1803ed47b9785d81b0280231a5b6",
       "status": "pending",
       "discovered_at": "2026-09-14T10:58:03.725077+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
+      }
+    },
+    "dc785232a3eb1396719fcf146e638cd2c451cac92e8037afcd08beae151be0e7": {
+      "source": "سازمان امور مالیاتی کشور",
+      "id": "inta_press/5542",
+      "date": "2026-09-14T11:57:27+00:00",
+      "link": "https://t.me/inta_press/5542",
+      "text": "مدیرکل امور مالیاتی استان اردبیل: ۳۲ پروژه در استان در قالب طرح «نشان‌دار کردن مالیات‌» با انتخاب مودیان تامین اعتبار می‌شود 🔹 مدیرکل امور مالیاتی استان اردبیل گفت: با اجرای طرح نشان‌دار کردن مالیات، اعتبار احداث، تکمیل و تجهیز ۳۲ پروژه استان در مجموع با اعتبار ۶۱۶ میلیارد تومان از محل پرداخت‌ مالیات مودیان در استان تامین خواهد شد. https://www.intamedia.ir/news/id/58284",
+      "auto_apply": true,
+      "review_id": "dc785232a3eb1396719fcf146e638cd2c451cac92e8037afcd08beae151be0e7",
+      "status": "pending",
+      "discovered_at": "2026-09-14T11:59:13.451390+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
