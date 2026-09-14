@@ -1,6 +1,6 @@
 {
   "initialized": true,
-  "last_check_utc": "2026-09-14T08:50:39.170202+00:00",
+  "last_check_utc": "2026-09-14T09:02:31.749523+00:00",
   "seen": [
     "inta_press/5463",
     "inta_press/5464",
@@ -1201,6 +1201,21 @@
       "review_id": "2aa24dc3d10d0c39ae1f2578bfe038204424e303d46930b0cb8cf77875c28d96",
       "status": "pending",
       "discovered_at": "2026-09-14T06:51:42.320614+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
+      }
+    },
+    "0e8e48b191b0e3aa4b2939eb043f64d5e9af1d5aed8050327ec6505267d4e74f": {
+      "source": "سازمان امور مالیاتی کشور",
+      "id": "inta_press/5539",
+      "date": "",
+      "link": "https://t.me/inta_press/5539",
+      "text": "🎥 کلیپ | نشست هم اندیشی رئیس کل سازمان امور مالیاتی کشور با رئیس سازمان سینمایی و مدیرعامل بنیاد فارابی",
+      "auto_apply": true,
+      "review_id": "0e8e48b191b0e3aa4b2939eb043f64d5e9af1d5aed8050327ec6505267d4e74f",
+      "status": "pending",
+      "discovered_at": "2026-09-14T09:02:31.749523+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
