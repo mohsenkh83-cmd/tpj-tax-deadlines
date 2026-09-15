@@ -1,6 +1,6 @@
 {
   "initialized": true,
-  "last_check_utc": "2026-09-15T08:22:28.989088+00:00",
+  "last_check_utc": "2026-09-15T08:49:44.092505+00:00",
   "seen": [
     "inta_press/5463",
     "inta_press/5464",
@@ -1390,6 +1390,21 @@
       "review_id": "2de557827fb941672f981449b77d688c81a2d8f584ea5bbc1bb2ebe4a35a42da",
       "status": "pending",
       "discovered_at": "2026-09-15T04:36:15.714589+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
+      }
+    },
+    "308618c98bebbcfd993c196f2979ef0c115630054d4f9f3f53aefa2d8562f5bf": {
+      "source": "سازمان امور مالیاتی کشور",
+      "id": "inta_press/5548",
+      "date": "2026-09-15T08:28:10+00:00",
+      "link": "https://t.me/inta_press/5548",
+      "text": "مدیرکل امور مالیاتی استان مرکزی: ۵۱ پروژه استان در طرح «نشان‌دار کردن مالیات» امسال قرار گرفت 🔹 مدیرکل امور مالیاتی استان مرکزی گفت: در سال‌جاری ۵۱ پروژه زیربنایی در سطح استان با اعتباری بالغ بر ۴۸۰ میلیارد تومان با مشارکت مودیان تامین اعتبار خواهد شد. https://www.intamedia.ir/news/id/58336",
+      "auto_apply": true,
+      "review_id": "308618c98bebbcfd993c196f2979ef0c115630054d4f9f3f53aefa2d8562f5bf",
+      "status": "pending",
+      "discovered_at": "2026-09-15T08:49:44.092505+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
