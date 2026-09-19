@@ -1,6 +1,6 @@
 {
   "initialized": true,
-  "last_check_utc": "2026-09-19T03:31:40.243633+00:00",
+  "last_check_utc": "2026-09-19T03:44:05.212997+00:00",
   "seen": [
     "inta_press/5463",
     "inta_press/5464",
@@ -1690,6 +1690,21 @@
       "review_id": "f6fec045dcf25755f41230331974501ae2395725b32a8e791652662826839299",
       "status": "pending",
       "discovered_at": "2026-09-18T03:45:12.649447+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
+      }
+    },
+    "28d4d96afaba7a7c2df6f45f0dd2a208e0c5fcdd7d38e2770b1eea1b9a434282": {
+      "source": "سازمان تأمین اجتماعی",
+      "id": "tamin_media/3134",
+      "date": "2026-09-19T03:34:59+00:00",
+      "link": "https://t.me/tamin_media/3134",
+      "text": "🗓️ امروز با تأمین اجتماعی 🔷 تأمین اجتماعی برخلاف بسیاری از دستگاه‌های اجرایی و صندوق‌های بازنشستگی، سهمی از بودجه عمومی کشور ندارد و خدمات و تعهدات خود را از جمله پرداخت مستمری به ۵ میلیون و ۳۰۰ هزار بازنشسته و مستمری‌بگیر تحت‌پوشش از محل وصول حق‌بیمه از کارفرمایان محترم ارائه می‌دهد. 🔹 کانال‌ رسمی تأمین اجتماعی: @Tamin_Media",
+      "auto_apply": true,
+      "review_id": "28d4d96afaba7a7c2df6f45f0dd2a208e0c5fcdd7d38e2770b1eea1b9a434282",
+      "status": "pending",
+      "discovered_at": "2026-09-19T03:44:05.212997+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
