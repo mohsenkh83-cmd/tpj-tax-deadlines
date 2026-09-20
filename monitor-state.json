@@ -1,6 +1,6 @@
 {
   "initialized": true,
-  "last_check_utc": "2026-09-20T10:30:37.116365+00:00",
+  "last_check_utc": "2026-09-20T10:43:25.590292+00:00",
   "seen": [
     "inta_press/5463",
     "inta_press/5464",
@@ -1870,6 +1870,21 @@
       "review_id": "e2531c98e73941c7e1c4453fd1c424e86ecc755fe5ee104f8b63916fdcf19af4",
       "status": "pending",
       "discovered_at": "2026-09-20T10:17:59.185683+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
+      }
+    },
+    "57d826f25c7e99b35814fba6215e935e0cb6ccf108d5ba5d45ad1ad0b92d5061": {
+      "source": "سازمان امور مالیاتی کشور",
+      "id": "inta_press/5565",
+      "date": "2026-09-20T10:31:22+00:00",
+      "link": "https://t.me/inta_press/5565",
+      "text": "سازمان امور مالیاتی کشور طی اطلاعیه ای خبر داد: الکترونیکی شدن دفاتر تجاری فعالان اقتصادی مناطق آزاد تجاری-صنعتی 🔹 اشخاص مشمول نگهداری دفاتر تجاری مستقر در مناطق آزاد تجاری-صنعتی می‌توانند با مراجعه به درگاه ملی خدمات الکترونیکی سازمان امور مالیاتی کشور به نشانی my.tax.gov.ir و ورود به بخش «سامانه دفاتر تجاری الکترونیکی»، نسبت به ثبت و بارگذاری دفاتر تجاری الکترونیکی خود اقدام نمایند. intamedia.ir/news/id/66768",
+      "auto_apply": true,
+      "review_id": "57d826f25c7e99b35814fba6215e935e0cb6ccf108d5ba5d45ad1ad0b92d5061",
+      "status": "pending",
+      "discovered_at": "2026-09-20T10:43:25.590292+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
