@@ -1,6 +1,6 @@
 {
   "initialized": true,
-  "last_check_utc": "2026-09-20T17:56:12.349320+00:00",
+  "last_check_utc": "2026-09-20T18:20:09.683987+00:00",
   "seen": [
     "inta_press/5463",
     "inta_press/5464",
@@ -1945,6 +1945,21 @@
       "review_id": "08e13f4133e7c1869de7c64e324b66a87bee1520677477f19d140c410a24506a",
       "status": "pending",
       "discovered_at": "2026-09-20T17:42:50.920461+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
+      }
+    },
+    "787635bb7cb67665eb88072aefed701dd11306022340c01f585fff563dcc1588": {
+      "source": "سازمان امور مالیاتی کشور",
+      "id": "inta_press/5573",
+      "date": "",
+      "link": "https://t.me/inta_press/5573",
+      "text": "🎥 کلیپ | نشست هم اندیشی رئیس کل سازمان امور مالیاتی کشور با وزیر ورزش و جوانان",
+      "auto_apply": true,
+      "review_id": "787635bb7cb67665eb88072aefed701dd11306022340c01f585fff563dcc1588",
+      "status": "pending",
+      "discovered_at": "2026-09-20T18:20:09.683987+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
