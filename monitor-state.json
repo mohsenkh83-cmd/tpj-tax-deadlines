@@ -1958,12 +1958,14 @@
       "text": "🎥 کلیپ | نشست هم اندیشی رئیس کل سازمان امور مالیاتی کشور با وزیر ورزش و جوانان",
       "auto_apply": true,
       "review_id": "787635bb7cb67665eb88072aefed701dd11306022340c01f585fff563dcc1588",
-      "status": "pending",
+      "status": "rejected",
       "discovered_at": "2026-09-20T18:20:09.683987+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
-      }
+      },
+      "reviewed_at": "2026-09-20T20:35:55.921Z",
+      "approved_text": ""
     }
   },
   "review_version": 1,
