@@ -1,6 +1,6 @@
 {
   "initialized": true,
-  "last_check_utc": "2026-09-20T15:17:38.473269+00:00",
+  "last_check_utc": "2026-09-20T15:30:01.432370+00:00",
   "seen": [
     "inta_press/5463",
     "inta_press/5464",
@@ -1915,6 +1915,21 @@
       "review_id": "c4a7215175329bedb9c3b4522f55d2483d7cf1f38d6a279373bf7f98b74b534b",
       "status": "pending",
       "discovered_at": "2026-09-20T14:17:32.507726+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
+      }
+    },
+    "d39214e99151a60d1621b776bff36c4c830f25af72268df60f6efc4a92ff0f93": {
+      "source": "سازمان امور مالیاتی کشور",
+      "id": "inta_press/5572",
+      "date": "2026-09-20T15:27:14+00:00",
+      "link": "https://t.me/inta_press/5572",
+      "text": "وزیر ورزش و جوانان در نشست هم اندیشی با رئیس کل سازمان امور مالیاتی کشور تاکید کرد: ظرفیت موثر طرح نشان‏ دار کردن مالیات برای حمایت از ورزش 🔹 احمد دنیامالی، وزیر ورزش و جوانان در نشست هم اندیشی با رئیس کل سازمان امور مالیاتی کشور گفت: طرح نشان دار کردن مالیات ظرفیت خوبی برای تامین منابع و اعتبارات مورد نیاز در حوزه ورزش ایجاد کرده است. https://www.intamedia.ir/news/id/66779",
+      "auto_apply": true,
+      "review_id": "d39214e99151a60d1621b776bff36c4c830f25af72268df60f6efc4a92ff0f93",
+      "status": "pending",
+      "discovered_at": "2026-09-20T15:30:01.432370+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
