@@ -1,6 +1,6 @@
 {
   "initialized": true,
-  "last_check_utc": "2026-09-21T05:57:07.632138+00:00",
+  "last_check_utc": "2026-09-21T06:26:44.885382+00:00",
   "seen": [
     "inta_press/5463",
     "inta_press/5464",
@@ -1985,6 +1985,21 @@
       "review_id": "25c7a491400611f268f73324092424dd6ccc15926a4eabcb5c3ddce60fa19bd1",
       "status": "pending",
       "discovered_at": "2026-09-21T03:34:53.937878+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
+      }
+    },
+    "7305f691efb17d5df389cd2ab84ef397c336d377ad41b2827d126338b15bd37c": {
+      "source": "سازمان تأمین اجتماعی",
+      "id": "tamin_media/3150",
+      "date": "2026-09-21T05:57:51+00:00",
+      "link": "https://t.me/tamin_media/3150",
+      "text": "🔴 هم‌اکنون/ پخش زنده سلسله نشست‌های نظام نوین تأمین اجتماعی چیستی، چرایی و چگونگی نشست دوم: آسیب‌شناسی صندوق‌های بیمه‌ای 🔗 لینک مشاهده از تلویزیون اینترنتی تأمین اجتماعی: aparat.com/tamin_media/live 🔹 کانال‌ رسمی تأمین اجتماعی: @Tamin_Media",
+      "auto_apply": true,
+      "review_id": "7305f691efb17d5df389cd2ab84ef397c336d377ad41b2827d126338b15bd37c",
+      "status": "pending",
+      "discovered_at": "2026-09-21T06:26:44.885382+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
