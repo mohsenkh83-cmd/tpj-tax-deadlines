@@ -1,6 +1,6 @@
 {
   "initialized": true,
-  "last_check_utc": "2026-09-22T08:58:24.709228+00:00",
+  "last_check_utc": "2026-09-22T09:18:50.019482+00:00",
   "seen": [
     "inta_press/5463",
     "inta_press/5464",
@@ -2122,6 +2122,21 @@
       "discovered_at": "2026-09-22T07:33:04.289025+00:00",
       "suggestion": {
         "task": null,
+        "deadline": null
+      }
+    },
+    "e21ea49472373b4d98f9557746c58219e68ecddeb2291a0a327eae990316ea09": {
+      "source": "سازمان امور مالیاتی کشور",
+      "id": "inta_press/5582",
+      "date": "2026-09-22T09:05:42+00:00",
+      "link": "https://t.me/inta_press/5582",
+      "text": "اشخاص حقوقی و صاحبان درآمد املاک اجاری تا پایان امروز، سه شنبه، ۳۱ شهریورماه فرصت دارند نسبت به ارایه اظهارنامه و پرداخت مالیات متعلق برای عملکرد سال 1404 اقدام کنند. https://www.intamedia.ir/news/id/66822",
+      "auto_apply": true,
+      "review_id": "e21ea49472373b4d98f9557746c58219e68ecddeb2291a0a327eae990316ea09",
+      "status": "pending",
+      "discovered_at": "2026-09-22T09:18:50.019482+00:00",
+      "suggestion": {
+        "task": "اظهارنامه عملکرد اشخاص حقوقی",
         "deadline": null
       }
     }
