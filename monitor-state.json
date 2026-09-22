@@ -1,6 +1,6 @@
 {
   "initialized": true,
-  "last_check_utc": "2026-09-22T12:23:51.877999+00:00",
+  "last_check_utc": "2026-09-22T12:49:21.592199+00:00",
   "seen": [
     "inta_press/5463",
     "inta_press/5464",
@@ -2150,6 +2150,21 @@
       "review_id": "bfdbad89db9959c3f62aaaa6b179204cfda3d559b8e5639938457dbcf637f8ee",
       "status": "pending",
       "discovered_at": "2026-09-22T11:18:39.288778+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
+      }
+    },
+    "a827739889b5713d897cebd5e376fa62a1b74c02bfc4920fea1833b2490e95ab": {
+      "source": "سازمان امور مالیاتی کشور",
+      "id": "inta_press/5583",
+      "date": "2026-09-22T12:41:31+00:00",
+      "link": "https://t.me/inta_press/5583",
+      "text": "ابراهیم‌پور، عضو کمیسیون آموزش، تحقیقات و فناوری مجلس: پروژه بهسازی جاده لردگان به اهواز در فهرست طرح نشان‌دار کردن مالیات قرار گرفت 🔹 نماینده مردم ایذه، باغملک، دزپارت و صیدون در مجلس شورای اسلامی گفت: پروژه بهسازی محور لردگان ـ اهواز با بیش از ۷۰ درصد پیشرفت، در فهرست طرح‌ نشان‌دار کردن مالیات امسال قرار گرفت. https://intamedia.ir/news/id/66878",
+      "auto_apply": true,
+      "review_id": "a827739889b5713d897cebd5e376fa62a1b74c02bfc4920fea1833b2490e95ab",
+      "status": "pending",
+      "discovered_at": "2026-09-22T12:49:21.592199+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
