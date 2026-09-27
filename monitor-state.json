@@ -1,6 +1,6 @@
 {
   "initialized": true,
-  "last_check_utc": "2026-09-27T05:44:43.070779+00:00",
+  "last_check_utc": "2026-09-27T05:56:18.941971+00:00",
   "seen": [
     "inta_press/5463",
     "inta_press/5464",
@@ -2503,6 +2503,21 @@
       "review_id": "88b9d525cebaa50db5e6e8b9e732375c2ce8c14bbfdd4e21bd34cc7cb8a07bcf",
       "status": "pending",
       "discovered_at": "2026-09-27T03:33:58.255740+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
+      }
+    },
+    "2036e8b41f3ea3b5722e9300f3a62b3123d703fa58686d24c56b81b805f4fdd5": {
+      "source": "سازمان تأمین اجتماعی",
+      "id": "tamin_media/3203",
+      "date": "2026-09-27T05:47:35+00:00",
+      "link": "https://t.me/tamin_media/3203",
+      "text": "🔷 سلسله نشست‌های نظام نوین تأمین اجتماعی چیستی، چرایی و چگونگی 📣 آسیب‌شناسی صندوق‌های بیمه‌ای(۲) (نشست سوم) 🗓️ تاریخ: دوشنبه ۶ مهر ماه ۱۴۰۵ 🕙 زمان: ۱۰ الی ۱۳ 🔸 ‌محل برگزاری: سازمان تأمین اجتماعی، سالن جلسات طبقه دوم ساختمان شهید معیری 🔗 لینک مشاهده پخش زنده نشست: https://www.aparat.com/tamin_media/live 🔹 کانال‌ رسمی تأمین اجتماعی: @Tamin_Media",
+      "auto_apply": true,
+      "review_id": "2036e8b41f3ea3b5722e9300f3a62b3123d703fa58686d24c56b81b805f4fdd5",
+      "status": "pending",
+      "discovered_at": "2026-09-27T05:56:18.941971+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
