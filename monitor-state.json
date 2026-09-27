@@ -1,6 +1,6 @@
 {
   "initialized": true,
-  "last_check_utc": "2026-09-27T11:56:21.322966+00:00",
+  "last_check_utc": "2026-09-27T12:23:32.204375+00:00",
   "seen": [
     "inta_press/5463",
     "inta_press/5464",
@@ -2578,6 +2578,21 @@
       "review_id": "8a0b51a5b11551805c1e679c8804d53dddbd2d5069111e84a6e810c7ce15abef",
       "status": "pending",
       "discovered_at": "2026-09-27T11:31:45.017858+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
+      }
+    },
+    "04e9f1366bf69009b439f535b4b4bc50293482c26ba67a07b43ba9ac1f8887ad": {
+      "source": "سازمان امور مالیاتی کشور",
+      "id": "inta_press/5610",
+      "date": "2026-09-27T12:08:17+00:00",
+      "link": "https://t.me/inta_press/5610",
+      "text": "بازدید رئیس کل سازمان امور مالیاتی کشور از اداره کل امور مالیاتی شرق استان‌ تهران",
+      "auto_apply": true,
+      "review_id": "04e9f1366bf69009b439f535b4b4bc50293482c26ba67a07b43ba9ac1f8887ad",
+      "status": "pending",
+      "discovered_at": "2026-09-27T12:23:32.204375+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
