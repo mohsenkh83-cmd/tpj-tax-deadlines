@@ -1,6 +1,6 @@
 {
   "initialized": true,
-  "last_check_utc": "2026-09-28T09:00:38.314609+00:00",
+  "last_check_utc": "2026-09-28T09:23:43.417973+00:00",
   "seen": [
     "inta_press/5463",
     "inta_press/5464",
@@ -2683,6 +2683,21 @@
       "review_id": "e1a82c4cc438df6c5ca7d3c1638ac5568ddcfe7587edcbc98c6661299dbe5133",
       "status": "pending",
       "discovered_at": "2026-09-28T07:22:08.575424+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
+      }
+    },
+    "ff480bb74bb44571f6e079b2c1fae1c5bf972917bae754300be52b0d6ddb533b": {
+      "source": "سازمان امور مالیاتی کشور",
+      "id": "inta_press/5621",
+      "date": "2026-09-28T09:21:30+00:00",
+      "link": "https://t.me/inta_press/5621",
+      "text": "سخنگوی سازمان امور مالیاتی کشور خبر داد: *رشد ۵۵ درصدی درآمدهای مالیاتی در بودجه ۱۴۰۵؛ وصول ۱۰۷۶ همت مالیات در نیمه نخست سال‌جاری* 🔹 سخنگوی سازمان امور مالیاتی کشور با حضور در برنامه \"خط خبر\" شبکه خبر صداوسیما از وصول ۱۰۷۶ هزار میلیارد تومان درآمد مالیاتی در شش‌ماهه نخست سال‌جاری خبر داد و به تشریح برخی اقدامات این سازمان در راستای تسهیل مالیات‌ستانی پرداخت. intamedia.ir/news/id/66989",
+      "auto_apply": true,
+      "review_id": "ff480bb74bb44571f6e079b2c1fae1c5bf972917bae754300be52b0d6ddb533b",
+      "status": "pending",
+      "discovered_at": "2026-09-28T09:23:43.417973+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
