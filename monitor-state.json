@@ -1,6 +1,6 @@
 {
   "initialized": true,
-  "last_check_utc": "2026-09-28T03:21:16.861284+00:00",
+  "last_check_utc": "2026-09-28T03:37:10.817277+00:00",
   "seen": [
     "inta_press/5463",
     "inta_press/5464",
@@ -2653,6 +2653,21 @@
       "review_id": "f0f7cbf6b722c7eeabfdad597190774e3805ca57e5e7efca201067d36d069f3f",
       "status": "pending",
       "discovered_at": "2026-09-27T17:30:11.622750+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
+      }
+    },
+    "0a7b2328f977b9eb0fe1200766b1937ada7a278cb5627776c7bf2de54c39cf4e": {
+      "source": "سازمان تأمین اجتماعی",
+      "id": "tamin_media/3213",
+      "date": "2026-09-28T03:32:09+00:00",
+      "link": "https://t.me/tamin_media/3213",
+      "text": "🗓️ امروز با تأمین اجتماعی 🔷 کارفرمایان پیمانکاری می‌توانند با اعلام فعالیت پیمانکاری در سامانه دریافت الکترونیک اطلاعات دفاتر، از شمول بازرسی دفاتر قانونی موضوع ماده ۴۷ قانون تأمین اجتماعی خارج شوند. 🔹 کانال‌ رسمی تأمین اجتماعی: @Tamin_Media",
+      "auto_apply": true,
+      "review_id": "0a7b2328f977b9eb0fe1200766b1937ada7a278cb5627776c7bf2de54c39cf4e",
+      "status": "pending",
+      "discovered_at": "2026-09-28T03:37:10.817277+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
