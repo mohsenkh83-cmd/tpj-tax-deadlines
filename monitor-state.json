@@ -1,6 +1,6 @@
 {
   "initialized": true,
-  "last_check_utc": "2026-09-29T10:58:47.170805+00:00",
+  "last_check_utc": "2026-09-29T11:20:14.159242+00:00",
   "seen": [
     "inta_press/5463",
     "inta_press/5464",
@@ -2833,6 +2833,21 @@
       "review_id": "331192cf10095a749ebebc0660f1759ab66c4e6b65d59ee982e736236f941905",
       "status": "pending",
       "discovered_at": "2026-09-29T10:21:32.027921+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
+      }
+    },
+    "46694132ae051d62a6d903460dedfb70007c82c3d31e1bfbcb5da3620361072f": {
+      "source": "سازمان امور مالیاتی کشور",
+      "id": "inta_press/5627",
+      "date": "2026-09-29T11:00:03+00:00",
+      "link": "https://t.me/inta_press/5627",
+      "text": "با اعتبار ۸۴۰ میلیارد ریالی انجام می‌شود؛ ۶ پروژه حوزه سلامت دانشگاه علوم پزشکی یاسوج در طرح نشان‌دار کردن مالیات 🔹 مدیرکل امور مالیاتی کهگیلویه و بویراحمد گفت: در سال ۱۴۰۵ سهم حوزه سلامت دانشگاه علوم پزشکی یاسوج از اجرای طرح نشان‌دار کردن مالیات ۶ پروژه است. https://intamedia.ir/news/id/67073",
+      "auto_apply": true,
+      "review_id": "46694132ae051d62a6d903460dedfb70007c82c3d31e1bfbcb5da3620361072f",
+      "status": "pending",
+      "discovered_at": "2026-09-29T11:20:14.159242+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
