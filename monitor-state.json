@@ -1,6 +1,6 @@
 {
   "initialized": true,
-  "last_check_utc": "2026-09-30T06:26:16.244409+00:00",
+  "last_check_utc": "2026-09-30T06:52:57.518157+00:00",
   "seen": [
     "inta_press/5463",
     "inta_press/5464",
@@ -2923,6 +2923,21 @@
       "review_id": "209a02a9cdd917fdac47b0b7db8e59d891ac79278c4c12d5daf159b52fc51ce6",
       "status": "pending",
       "discovered_at": "2026-09-30T03:37:37.120543+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
+      }
+    },
+    "9af0563844e4a637898af3cf561d51cbcc2fc9472d244c82e564aefca0722ea2": {
+      "source": "سازمان امور مالیاتی کشور",
+      "id": "inta_press/5631",
+      "date": "2026-09-30T06:38:05+00:00",
+      "link": "https://t.me/inta_press/5631",
+      "text": "وزير امور اقتصادی و دارایی خبر داد: ۱۸۰ هزار میلیارد تومان حمایت مالیاتی از بنگاه‌های بزرگ 🔹 وزیر امور اقتصادی و دارایی در صحن علنی مجلس شورای اسلامی گفت: بیش از ۱۸۰ هزار میلیارد تومان در قالب بخشودگی، تقسیط و معافیت‌های مالیاتی برای ۶۸ بنگاه‌ بزرگ در نظر گرفته شده است. https://intamedia.ir/news/id/67098",
+      "auto_apply": true,
+      "review_id": "9af0563844e4a637898af3cf561d51cbcc2fc9472d244c82e564aefca0722ea2",
+      "status": "pending",
+      "discovered_at": "2026-09-30T06:52:57.518157+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
