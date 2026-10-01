@@ -1,6 +1,6 @@
 {
   "initialized": true,
-  "last_check_utc": "2026-10-01T12:54:08.583016+00:00",
+  "last_check_utc": "2026-10-01T13:24:47.198547+00:00",
   "seen": [
     "inta_press/5463",
     "inta_press/5464",
@@ -3028,6 +3028,21 @@
       "review_id": "421af72fe6f35f7c6955be7acd9a46b445d8ad4411195478b3adbc3dbfdadef7",
       "status": "pending",
       "discovered_at": "2026-10-01T07:48:50.600153+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
+      }
+    },
+    "d721a8b4b0e51354759b241b758f42bf272e5546ab14eaf2d61a2662da3f8ade": {
+      "source": "سازمان امور مالیاتی کشور",
+      "id": "inta_press/5645",
+      "date": "2026-10-01T12:57:46+00:00",
+      "link": "https://t.me/inta_press/5645",
+      "text": "اجلاس مدیران مالیاتی سراسر کشور با حضور وزیر امور اقتصادی و دارایی و معاون سازمان برنامه و بودجه کشور - پنج شنبه ۹ مهرماه ۱۴۰۵",
+      "auto_apply": true,
+      "review_id": "d721a8b4b0e51354759b241b758f42bf272e5546ab14eaf2d61a2662da3f8ade",
+      "status": "pending",
+      "discovered_at": "2026-10-01T13:24:47.198547+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
