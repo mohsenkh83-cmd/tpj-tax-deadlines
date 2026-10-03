@@ -1,6 +1,6 @@
 {
   "initialized": true,
-  "last_check_utc": "2026-10-03T04:24:23.020086+00:00",
+  "last_check_utc": "2026-10-03T04:47:39.789352+00:00",
   "seen": [
     "inta_press/5463",
     "inta_press/5464",
@@ -3148,6 +3148,51 @@
       "review_id": "fe1f0cd50e71d9e00dacd9a105c9bc7f34a04483dd4bc123ebbccfd226b4d671",
       "status": "pending",
       "discovered_at": "2026-10-02T19:36:39.372286+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
+      }
+    },
+    "1c8e2fc842f03ea30f2eb6afb0d23d7102d46f075def6015e7d3c1b662e394dc": {
+      "source": "سازمان تأمین اجتماعی",
+      "id": "tamin_media/3254",
+      "date": "",
+      "link": "https://t.me/tamin_media/3254",
+      "text": "🎥 احمد میدری، وزیر تعاون، کار و رفاه اجتماعی، در برنامه گفت‌وگوی ویژه خبری: 🔹 از این هفته بازگشایی حساب کارفرماها مثل انسداد حساب‌ها از یک سامانه انجام خواهد شد تا مجبور نشوند به چند بانک برای بازگشایی حساب مراجعه کنند @PadDolat @Padmultimedia",
+      "auto_apply": true,
+      "review_id": "1c8e2fc842f03ea30f2eb6afb0d23d7102d46f075def6015e7d3c1b662e394dc",
+      "status": "pending",
+      "discovered_at": "2026-10-03T04:47:39.789352+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
+      }
+    },
+    "8f9e36bfe987904fbf50f4e62900259b8a1612954dc37777fd83247bec0f6395": {
+      "source": "سازمان تأمین اجتماعی",
+      "id": "tamin_media/3255",
+      "date": "",
+      "link": "https://t.me/tamin_media/3255",
+      "text": "🎥 احمد میدری، وزیر تعاون، کار و رفاه اجتماعی، در برنامه گفت‌وگوی ویژه خبری: 🔹 از این هفته بازگشایی حساب کارفرماها مثل انسداد حساب‌ها از یک سامانه انجام خواهد شد تا مجبور نشوند به چند بانک برای بازگشایی حساب مراجعه کنند @PadDolat @Padmultimedia",
+      "auto_apply": true,
+      "review_id": "8f9e36bfe987904fbf50f4e62900259b8a1612954dc37777fd83247bec0f6395",
+      "status": "pending",
+      "discovered_at": "2026-10-03T04:47:39.789352+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
+      }
+    },
+    "856d91310f7879b4b0e84db3f226f323205ce4615ccb83d39b8c8bebdfd81d6b": {
+      "source": "سازمان تأمین اجتماعی",
+      "id": "tamin_media/3256",
+      "date": "",
+      "link": "https://t.me/tamin_media/3256",
+      "text": "🎥 احمد میدری، وزیر تعاون، کار و رفاه اجتماعی، در برنامه گفت‌وگوی ویژه خبری: 🔹 با مجوز بانک مرکزی ۲۰۰ همت اوراق گام منتشر می‌کنیم 🔹 اوراق گام به این معناست که کارفرمایانی که نتوانستند بدهی خود را به تامین اجتماعی پرداخت کنند این اوراق را دریافت می‌کنند. @PadDolat…",
+      "auto_apply": true,
+      "review_id": "856d91310f7879b4b0e84db3f226f323205ce4615ccb83d39b8c8bebdfd81d6b",
+      "status": "pending",
+      "discovered_at": "2026-10-03T04:47:39.789352+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
