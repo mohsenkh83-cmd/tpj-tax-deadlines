@@ -1,6 +1,6 @@
 {
   "initialized": true,
-  "last_check_utc": "2026-10-03T09:21:17.736451+00:00",
+  "last_check_utc": "2026-10-03T09:35:57.652546+00:00",
   "seen": [
     "inta_press/5463",
     "inta_press/5464",
@@ -3193,6 +3193,21 @@
       "review_id": "856d91310f7879b4b0e84db3f226f323205ce4615ccb83d39b8c8bebdfd81d6b",
       "status": "pending",
       "discovered_at": "2026-10-03T04:47:39.789352+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
+      }
+    },
+    "221102176ff9aab9933fc16608064b7409210017d7d92c8dabb22c1eed27e65e": {
+      "source": "سازمان امور مالیاتی کشور",
+      "id": "inta_press/5662",
+      "date": "2026-10-03T09:22:45+00:00",
+      "link": "https://t.me/inta_press/5662",
+      "text": "شنبه 11 مهرماه، سازمان امور مالیاتی کشور میزبان هشتادمین نشست ارکان اطلاع‌رسانی دولت بود که «نقش رو به افزایش درآمدهای مالیاتی در تأمین هزینه‌های کشور» و «توسعه نظام مالیاتی داده‌محور» را در دستور جلسه خود داشت.",
+      "auto_apply": true,
+      "review_id": "221102176ff9aab9933fc16608064b7409210017d7d92c8dabb22c1eed27e65e",
+      "status": "pending",
+      "discovered_at": "2026-10-03T09:35:57.652546+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
