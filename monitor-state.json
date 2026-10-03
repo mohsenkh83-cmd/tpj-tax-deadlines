@@ -1,6 +1,6 @@
 {
   "initialized": true,
-  "last_check_utc": "2026-10-03T11:23:37.867445+00:00",
+  "last_check_utc": "2026-10-03T14:47:48.423417+00:00",
   "seen": [
     "inta_press/5463",
     "inta_press/5464",
@@ -3238,6 +3238,21 @@
       "review_id": "b7fb5f2c3ffad8eaf1188d68a0cd8272877ce2cb6d82582c8b238a67cf632386",
       "status": "pending",
       "discovered_at": "2026-10-03T11:23:37.867445+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
+      }
+    },
+    "c4dfe1c020b033ee4cd7ba7394d28261364363565718004f175737c5e996ecc2": {
+      "source": "سازمان امور مالیاتی کشور",
+      "id": "inta_press/5674",
+      "date": "",
+      "link": "https://t.me/inta_press/5674",
+      "text": "کلیپ | هشتادمین نشست رئیس کل سازمان امور مالیاتی کشور با ارکان اطلاع رسانی دولت",
+      "auto_apply": true,
+      "review_id": "c4dfe1c020b033ee4cd7ba7394d28261364363565718004f175737c5e996ecc2",
+      "status": "pending",
+      "discovered_at": "2026-10-03T14:47:48.423417+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
