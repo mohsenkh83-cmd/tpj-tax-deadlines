@@ -1,6 +1,6 @@
 {
   "initialized": true,
-  "last_check_utc": "2026-10-12T16:57:01.580358+00:00",
+  "last_check_utc": "2026-10-12T23:34:50.463802+00:00",
   "seen": [
     "inta_press/5463",
     "inta_press/5464",
@@ -4295,7 +4295,5 @@
     }
   },
   "review_version": 1,
-  "failed_sources": [
-    "اک‌پرس ـ تازه‌های مالیاتی"
-  ]
+  "failed_sources": []
 }
