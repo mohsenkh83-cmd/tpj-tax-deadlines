@@ -1,6 +1,6 @@
 {
   "initialized": true,
-  "last_check_utc": "2026-10-14T17:33:11.066695+00:00",
+  "last_check_utc": "2026-10-14T20:56:16.340407+00:00",
   "seen": [
     "inta_press/5463",
     "inta_press/5464",
@@ -4558,6 +4558,36 @@
       "review_id": "f73f82b90183f99669dd99258e6b73daadcfcaf057c855e8acf16fe54ef43c0f",
       "status": "pending",
       "discovered_at": "2026-10-14T17:33:11.066695+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
+      }
+    },
+    "7deaa57f5c8469ec96ad2cb28bd3565f32c1a05aa66d2c1074b9b11b24afffa1": {
+      "source": "سازمان امور مالیاتی کشور",
+      "id": "inta_press/5733",
+      "date": "2026-10-14T18:43:23+00:00",
+      "link": "https://t.me/inta_press/5733",
+      "text": "❇️ چهارشنبه، ۲۲ مهرماه، سازمان امور مالیاتی کشور میزبان نشست هم‌اندیشی اساتید و نخبگان حوزه علمی و اجرایی اقتصاد بود. ❇️ در این نشست، سید محمدهادی سبحانیان با ارائه گزارشی از اقدامات و دستاوردهای نظام مالیاتی، راهبرد سازمان در حوزه هوشمندسازی فرایندهای مالیاتی را تشریح کرد. ❇️ اساتید، اقتصادپژوهان و اعضای هیئت علمی شرکت کننده در این نشست نیز به بیان دیدگاه ها و نظرات خود در حوزه مالیات و چشم انداز پیش روی نظام مالیاتی پرداختند.",
+      "auto_apply": true,
+      "review_id": "7deaa57f5c8469ec96ad2cb28bd3565f32c1a05aa66d2c1074b9b11b24afffa1",
+      "status": "pending",
+      "discovered_at": "2026-10-14T20:56:16.340407+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
+      }
+    },
+    "8b27d394315900555e693f51446f59b0e23a1fb235de6fbc157204954ef0a51d": {
+      "source": "سازمان امور مالیاتی کشور",
+      "id": "inta_press/5739",
+      "date": "",
+      "link": "https://t.me/inta_press/5739",
+      "text": "🎥 نشست هم اندیشی با اساتید و نخبگان علمی و اجرایی اقتصاد و مالیات",
+      "auto_apply": true,
+      "review_id": "8b27d394315900555e693f51446f59b0e23a1fb235de6fbc157204954ef0a51d",
+      "status": "pending",
+      "discovered_at": "2026-10-14T20:56:16.340407+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
