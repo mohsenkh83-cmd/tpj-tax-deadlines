@@ -1,6 +1,6 @@
 {
   "initialized": true,
-  "last_check_utc": "2026-10-14T01:49:47.221612+00:00",
+  "last_check_utc": "2026-10-14T06:46:22.830085+00:00",
   "seen": [
     "inta_press/5463",
     "inta_press/5464",
@@ -4423,6 +4423,21 @@
       "review_id": "ee9076425e02c87d257f020738d3b5493003b010c5706bb39cdd9667c81ee1f5",
       "status": "pending",
       "discovered_at": "2026-10-13T18:22:16.581771+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
+      }
+    },
+    "cb6aad851a4a1b5e001c73d83094e98060d4778aa160ea2d34f4cd1729e8ddeb": {
+      "source": "سازمان امور مالیاتی کشور",
+      "id": "inta_press/5727",
+      "date": "",
+      "link": "https://t.me/inta_press/5727",
+      "text": "رئیس کل سازمان امور مالیاتی کشور گفت: در حال حاضر ۹۹.۵ درصد از پرونده‌های مالیاتی صاحبان مشاغل (اشخاص حقیقی) و ۸۶ درصد از پرونده‌های اشخاص حقوقی به صورت سیستمی حسابرسی می‌شود. همچنین ۱۰۰ درصد اظهارنامه های مربوط به مالیات بر درآمد اجاره املاک به صورت سیستمی حسابرسی می‌شود.",
+      "auto_apply": true,
+      "review_id": "cb6aad851a4a1b5e001c73d83094e98060d4778aa160ea2d34f4cd1729e8ddeb",
+      "status": "pending",
+      "discovered_at": "2026-10-14T06:46:22.830085+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
