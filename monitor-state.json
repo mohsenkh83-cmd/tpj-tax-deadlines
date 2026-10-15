@@ -1,6 +1,6 @@
 {
   "initialized": true,
-  "last_check_utc": "2026-10-15T09:21:01.435114+00:00",
+  "last_check_utc": "2026-10-15T14:14:37.700393+00:00",
   "seen": [
     "inta_press/5463",
     "inta_press/5464",
@@ -4588,6 +4588,21 @@
       "review_id": "8b27d394315900555e693f51446f59b0e23a1fb235de6fbc157204954ef0a51d",
       "status": "pending",
       "discovered_at": "2026-10-14T20:56:16.340407+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
+      }
+    },
+    "ed8272a7e439cdccdb4eeb2cd94160e0b8a6f30385c47c39136304c66187ccbb": {
+      "source": "سازمان تأمین اجتماعی",
+      "id": "tamin_media/3371",
+      "date": "2026-10-15T09:50:26+00:00",
+      "link": "https://t.me/tamin_media/3371",
+      "text": "🔵 اطلاعیه موضوعات اعطای وام خوداشتغالی و ثبت درخواست‌های بیمه‌بیکاری به مرکز تماس ۱۴۲۰ تأمین‌اجتماعی ارتباطی ندارد.ثبت درخواست بیمه‌بیکاری از طریق سامانه مربوط به وزارت تعاون،کار و رفاه اجتماعی به آدرس prkar.mcls.gov.ir انجام می‌شود. همچنین سامانه جامع تسهیلات اشتغال کشور به آدرس tek.mcls.gov.ir نیز مرجع ثبت طرح‌های خوداشتغالی است. 🔹 کانال‌ رسمی تأمین اجتماعی: @Tamin_Media",
+      "auto_apply": true,
+      "review_id": "ed8272a7e439cdccdb4eeb2cd94160e0b8a6f30385c47c39136304c66187ccbb",
+      "status": "pending",
+      "discovered_at": "2026-10-15T14:14:37.700393+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
