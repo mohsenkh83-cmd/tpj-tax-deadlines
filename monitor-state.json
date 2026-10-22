@@ -1,6 +1,6 @@
 {
   "initialized": true,
-  "last_check_utc": "2026-10-22T00:43:40.107960+00:00",
+  "last_check_utc": "2026-10-22T05:27:33.121779+00:00",
   "seen": [
     "inta_press/5463",
     "inta_press/5464",
@@ -5549,6 +5549,21 @@
       "review_id": "69765654880a54d8f81a1971cc023d1c76fd14e97aee2c4b9f7413c9f8ef8967",
       "status": "pending",
       "discovered_at": "2026-10-21T18:59:05.977956+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
+      }
+    },
+    "c75be5f10a4aa4cbb391bf0ba08338116f78c1eb5671cffe116f2b10ff397b5e": {
+      "source": "سازمان تأمین اجتماعی",
+      "id": "tamin_media/3439",
+      "date": "2026-10-22T04:32:55+00:00",
+      "link": "https://t.me/tamin_media/3439",
+      "text": "🗓️ امروز با تأمین اجتماعی 🔷 کارفرمایان محترم؛ با توجه به اینکه امروز، پایان مهلت قانونی پرداخت حق‌بیمه است، چنانچه تاکنون نسبت به ارسال لیست و پرداخت حق‌بیمه شهریور ماه کارکنان اقدام نکرده‌اید، فقط تا ساعت ۲۴ امشب فرصت دارید. 🔹 کانال‌ رسمی تأمین اجتماعی: @Tamin_Media",
+      "auto_apply": true,
+      "review_id": "c75be5f10a4aa4cbb391bf0ba08338116f78c1eb5671cffe116f2b10ff397b5e",
+      "status": "pending",
+      "discovered_at": "2026-10-22T05:27:33.121779+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
