@@ -1,6 +1,6 @@
 {
   "initialized": true,
-  "last_check_utc": "2026-10-26T00:39:13.080694+00:00",
+  "last_check_utc": "2026-10-26T05:26:51.403613+00:00",
   "seen": [
     "inta_press/5463",
     "inta_press/5464",
@@ -6018,6 +6018,21 @@
       "review_id": "baa9fbc5592be930a0deb5b98a424d64bdbfbe3823b333ce5531667632e8753f",
       "status": "pending",
       "discovered_at": "2026-10-25T22:27:58.999387+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
+      }
+    },
+    "8aa569ce44e9797f33356b8a79206ad16920972d3ba4d5dd03e36e5907bd4019": {
+      "source": "سازمان تأمین اجتماعی",
+      "id": "tamin_media/3470",
+      "date": "2026-10-26T04:22:01+00:00",
+      "link": "https://t.me/tamin_media/3470",
+      "text": "🗓️ امروز با تأمین اجتماعی 🔷 بیمه‌شدگان و بازنشستگان محترم؛ برای دریافت خدمات غیرحضوری سریع‌تر و کارآمدتر، لطفاً شماره حساب بانکی فعال و معتبر، شماره تلفن همراه و اطلاعات پرونده سلامت الکترونیک خود را در سامانه خدمات الکترونیک این سازمان به نشانی es.tamin.ir ثبت یا به‌روزرسانی کنید. 🇮🇷 آغاز هفته پدافند غیرعامل 🔹 کانال‌ رسمی تأمین اجتماعی: @Tamin_Media",
+      "auto_apply": true,
+      "review_id": "8aa569ce44e9797f33356b8a79206ad16920972d3ba4d5dd03e36e5907bd4019",
+      "status": "pending",
+      "discovered_at": "2026-10-26T05:26:51.403613+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
