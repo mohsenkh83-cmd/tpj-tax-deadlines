@@ -1,6 +1,6 @@
 {
   "initialized": true,
-  "last_check_utc": "2026-10-31T02:29:48.825575+00:00",
+  "last_check_utc": "2026-10-31T08:47:31.397603+00:00",
   "seen": [
     "inta_press/5463",
     "inta_press/5464",
@@ -6648,6 +6648,21 @@
       "review_id": "c582a7afae9948ff8f1d94491416e84624b696429e9a3f447b4a50ccd4186f9d",
       "status": "pending",
       "discovered_at": "2026-10-30T14:18:25.980795+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
+      }
+    },
+    "af1b4ae1e80a658e1624a70c70cb18d75820326bbba377ae6c1d327195aabe60": {
+      "source": "سازمان تأمین اجتماعی",
+      "id": "tamin_media/3517",
+      "date": "2026-10-31T04:29:38+00:00",
+      "link": "https://t.me/tamin_media/3517",
+      "text": "🗓️ امروز با تأمین اجتماعی 🔷 کد رهگیری نسخه دارویی برخی داروها صرفاً به شماره تلفن همراه بیمار ارسال می‌شود. بیمه‌شدگان برای دریافت کدرهگیری نسخ، شماره تلفن همراه خود را در سامانه خدمات غیرحضوری سازمان es.tamin.ir ثبت یا بروزرسانی کنند. 🔹 کانال‌ رسمی تأمین اجتماعی: @Tamin_Media",
+      "auto_apply": true,
+      "review_id": "af1b4ae1e80a658e1624a70c70cb18d75820326bbba377ae6c1d327195aabe60",
+      "status": "pending",
+      "discovered_at": "2026-10-31T08:47:31.397603+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
