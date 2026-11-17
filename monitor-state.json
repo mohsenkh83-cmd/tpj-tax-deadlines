@@ -1,6 +1,6 @@
 {
   "initialized": true,
-  "last_check_utc": "2026-11-17T00:09:15.201270+00:00",
+  "last_check_utc": "2026-11-17T08:05:49.051405+00:00",
   "seen": [
     "inta_press/5463",
     "inta_press/5464",
@@ -8903,6 +8903,21 @@
       "review_id": "37fd732122a6088a24a731502d8dbd43551dba569e781ab0b9725e70e47c0b09",
       "status": "pending",
       "discovered_at": "2026-11-16T16:02:40.617343+00:00",
+      "suggestion": {
+        "task": null,
+        "deadline": null
+      }
+    },
+    "4391b8bd9b79841875db958e1d19b1607222f67ea6b4bce0981579129a5f5ebc": {
+      "source": "سازمان تأمین اجتماعی",
+      "id": "tamin_media/3694",
+      "date": "2026-11-17T03:47:46+00:00",
+      "link": "https://t.me/tamin_media/3694",
+      "text": "🗓️ امروز با تأمین اجتماعی 🔷 سامانه خدمات غیرحضوری سازمان es.tamin.ir در هر ساعت از شبانه‌روز فعال و برقرار است و کارفرمایان محترم می‌توانند بدون نیاز به مراجعه به شعبه یا کارگزاری در محل کار یا منزل، نسبت به ارسال لیست و پرداخت حق‌بیمه کارکنان اقدام کنند. 🔹 کانال رسمی تأمین اجتماعی: @Tamin_Media",
+      "auto_apply": true,
+      "review_id": "4391b8bd9b79841875db958e1d19b1607222f67ea6b4bce0981579129a5f5ebc",
+      "status": "pending",
+      "discovered_at": "2026-11-17T08:05:49.051405+00:00",
       "suggestion": {
         "task": null,
         "deadline": null
